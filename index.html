@@ -66,8 +66,6 @@
     @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .logos-mask { overflow: hidden; }
     .logo-card { min-width: 180px; }
-    .floating-whatsapp { position: fixed; right: 24px; bottom: 24px; z-index: 40; }
-    .floating-whatsapp a { width: 56px; height: 56px; border-radius: 999px; background: #22c55e; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 30px rgba(34, 197, 94, 0.4); animation: float 2s ease-in-out infinite; }
     @keyframes float { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
   </style>
 </head>
@@ -85,26 +83,23 @@
     <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
   </div>
 
-  <div class="relative w-full h-full flex items-center">
+  <div class="relative w-full h-full flex flex-col lg:flex-row items-center">
+    <!-- Mobile Image -->
+    <div class="w-full lg:hidden">
+      <img src="https://i.postimg.cc/2SqyZ3P7/dutra-mobila.png" alt="Dutra Midias Mobile Hero" class="w-full h-auto object-cover" />
+    </div>
     <!-- Left Content -->
-    <div class="w-full lg:w-1/2 px-6 sm:px-10 lg:px-20 xl:px-32 py-16 lg:py-28 relative z-10 reveal">
-      <div class="max-w-2xl ml-auto lg:ml-0">
+    <div class="w-full lg:w-1/2 px-6 sm:px-10 lg:px-20 xl:px-32 py-12 lg:py-28 relative z-10 reveal text-center lg:text-left">
+      <div class="max-w-2xl mx-auto lg:mx-0">
         <!-- Logo Marca -->
-        <div class="mb-8">
-          <div class="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white/90 backdrop-blur-sm px-5 py-2 shadow-sm">
-            <img src="https://i.postimg.cc/3wFt7Yrx/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" alt="Dutra Mídias Logo" class="h-7 w-auto object-contain" />
-            <span class="w-px h-4 bg-primary/30"></span>
-            <span class="font-heading text-xs sm:text-sm font-extrabold tracking-[0.2em] text-foreground">DUTRA MÍDIAS</span>
-          </div>
+        <div class="mb-8 flex justify-center lg:justify-start">
+          <img src="https://i.postimg.cc/3wFt7Yrx/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" alt="Dutra Mídias Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_10px_25px_rgba(124,58,237,0.25)]" />
         </div>
         <!-- Premium Badge -->
-        <div class="mb-8">
+        <div class="mb-8 flex justify-center lg:justify-start">
           <div class="inline-flex items-center gap-3 mb-6 relative group">
             <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary/60 via-purple-500/50 to-primary/60 blur-[6px] opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
             <div class="relative flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/40 bg-white/80 backdrop-blur-sm shadow-lg">
-              <img src="https://i.postimg.cc/J7TMgcfb/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" alt="DM Logo" class="h-5 w-auto object-contain brightness-0 invert opacity-90 shrink-0" />
-              <span class="w-px h-4 bg-primary/40 shrink-0"></span>
-              <span class="text-primary text-base leading-none select-none" aria-hidden="true">✦</span>
               <span class="text-foreground/90 font-semibold tracking-wide text-[10px] sm:text-xs md:text-sm uppercase">
                 Sua empresa nunca mais será a mesma depois da
                 <span class="text-primary font-extrabold">DM</span>
@@ -121,7 +116,7 @@
           Aqui na Dutra Mídias, não vendemos historinha. Comprovamos resultados no seu nicho e expertise em trazer uma estratégia totalmente diferente do que você já fez em sua empresa, e te ajudamos a escalar a sua operação.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16 justify-center lg:justify-start">
           <a href="#diagnostico" class="btn-glow bg-primary hover:bg-primary/95 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-5 rounded-lg shadow-[0_0_40px_-10px_#7C3AED] hover:shadow-[0_0_60px_-15px_#7C3AED] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
             Agendar diagnóstico estratégico
             <i data-lucide="arrow-right" class="w-5 h-5"></i>
@@ -132,7 +127,7 @@
         </div>
 
         <!-- Stats Cards -->
-        <div class="grid grid-cols-3 gap-3 sm:gap-4">
+        <div class="grid grid-cols-3 gap-3 sm:gap-4 mx-auto lg:mx-0">
           <div class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
             <i data-lucide="calendar" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
             <p class="font-heading font-bold text-foreground text-lg sm:text-2xl"><span class="counter" data-target="5" data-prefix="+">+5</span> anos</p>
@@ -334,7 +329,9 @@
       </p>
       <div class="relative mx-auto max-w-2xl mb-8">
         <div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-purple-500/10 to-transparent blur-[60px] rounded-full pointer-events-none scale-110"></div>
-        <img src="GIF-DM.gif" alt="Método DM - Personalização" class="w-full h-auto object-contain relative z-10 rounded-2xl" />
+        <div class="relative z-10 rounded-2xl overflow-hidden bg-white">
+          <img src="GIF-DM.gif" alt="Método DM - Personalização" class="w-full h-auto object-cover scale-[1.03]" />
+        </div>
       </div>
     </div>
   </div>
@@ -441,9 +438,7 @@
         <div class="relative text-center">
           <div class="relative z-10 w-24 h-24 mx-auto mb-6 bg-white border-2 border-primary rounded-full flex items-center justify-center">
             <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-              <svg class="w-8 h-8 text-white" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-                <path d="M16 4.4c-6.6 0-12 4.9-12 10.9 0 2.1.7 4.2 2 5.9L4 28l7-1.8c1.5.8 3.3 1.2 5 1.2 6.6 0 12-4.9 12-10.9S22.6 4.4 16 4.4zm0 20.2c-1.6 0-3.1-.4-4.4-1.1l-.6-.3-4.1 1.1 1.1-3.9-.4-.6c-1.2-1.5-1.8-3.3-1.8-5.1 0-4.7 4.3-8.5 9.6-8.5s9.6 3.8 9.6 8.5-4.3 8.5-9.6 8.5zm5-6.3c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.1.2-.5.7-.7.9-.1.2-.2.2-.4.1-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.5-1.2-.7-1.7-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.9 2.4 1 2.6.1.2 1.7 2.6 4.2 3.6.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.2-.2-.2-.4-.3z" />
-              </svg>
+              <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
             </div>
           </div>
           <div class="absolute -top-2 right-1/2 translate-x-1/2 md:translate-x-0 md:right-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading">2</div>
@@ -537,13 +532,6 @@
   </div>
 </footer>
 
-<div class="floating-whatsapp">
-  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-    <svg class="w-6 h-6 text-white" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-      <path d="M16 4.4c-6.6 0-12 4.9-12 10.9 0 2.1.7 4.2 2 5.9L4 28l7-1.8c1.5.8 3.3 1.2 5 1.2 6.6 0 12-4.9 12-10.9S22.6 4.4 16 4.4zm0 20.2c-1.6 0-3.1-.4-4.4-1.1l-.6-.3-4.1 1.1 1.1-3.9-.4-.6c-1.2-1.5-1.8-3.3-1.8-5.1 0-4.7 4.3-8.5 9.6-8.5s9.6 3.8 9.6 8.5-4.3 8.5-9.6 8.5zm5-6.3c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.1.2-.5.7-.7.9-.1.2-.2.2-.4.1-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.5-1.2-.7-1.7-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.9 2.4 1 2.6.1.2 1.7 2.6 4.2 3.6.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.2-.2-.2-.4-.3z" />
-    </svg>
-  </a>
-</div>
 
 
 <!-- ==================== JAVASCRIPT ==================== -->
