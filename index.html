@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dutra Mídias — Assessoria de Tráfego Pago em Minas Gerais</title>
+  <meta name="description" content="A assessoria que prova na prática por que empresas em Minas Gerais crescem mais rápido com a DM. +200 empresas atendidas, +R$10M gerenciados em anúncios." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#FFFFFF',
+            foreground: '#0a0a0a',
+            card: '#FFFFFF',
+            primary: { DEFAULT: '#7C3AED', foreground: '#FFFFFF' },
+            secondary: { DEFAULT: '#F5F5F7', foreground: '#0a0a0a' },
+            muted: { DEFAULT: '#F5F5F7', foreground: '#737373' },
+            border: '#e5e5e5',
+            input: '#e5e5e5',
+            ring: '#7C3AED',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    * { border-color: #e5e5e5; }
+    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #0a0a0a; }
+    .font-heading { font-family: 'Montserrat', sans-serif; }
+    @keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .animate-pulse { animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .animate-spin { animation: spin 1s linear infinite; }
+    @keyframes count-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .count-animated { animation: count-up 0.5s ease-out forwards; }
+    select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+    #loader { position: fixed; inset: 0; background: #0b0b0f; display: flex; align-items: center; justify-content: center; z-index: 9999; }
+    #loader .logo { color: #a855f7; font-size: 56px; font-weight: 900; letter-spacing: 0.2em; text-shadow: 0 0 24px rgba(168, 85, 247, 0.6); animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse { 0% { opacity: 0.4; transform: scale(0.92); } 50% { opacity: 1; transform: scale(1); } 100% { opacity: 0.4; transform: scale(0.92); } }
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .hero-img { transition: transform 0.2s ease; }
+    .btn-glow { box-shadow: 0 0 0 rgba(168, 85, 247, 0.7); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .btn-glow:hover { box-shadow: 0 0 22px rgba(168, 85, 247, 0.8); transform: translateY(-2px); }
+    .logos-track { display: flex; align-items: center; gap: 48px; animation: scroll 20s linear infinite; }
+    .logos-track:hover { animation-play-state: paused; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .logos-mask { overflow: hidden; }
+    .logo-card { min-width: 180px; }
+    .floating-whatsapp { position: fixed; right: 24px; bottom: 24px; z-index: 40; }
+    .floating-whatsapp a { width: 56px; height: 56px; border-radius: 999px; background: #22c55e; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 30px rgba(34, 197, 94, 0.4); animation: float 2s ease-in-out infinite; }
+    @keyframes float { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+  </style>
+</head>
+<body class="min-h-screen">
+
+<div id="loader" aria-hidden="true">
+  <div class="logo">DM</div>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section class="relative min-h-screen flex items-center bg-white overflow-hidden">
+  <!-- Background Glows -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
+  </div>
+
+  <div class="relative w-full h-full flex items-center">
+    <!-- Left Content -->
+    <div class="w-full lg:w-1/2 px-6 sm:px-10 lg:px-20 xl:px-32 py-16 lg:py-28 relative z-10 reveal">
+      <div class="max-w-2xl ml-auto lg:ml-0">
+        <!-- Logo Marca -->
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white/90 backdrop-blur-sm px-5 py-2 shadow-sm">
+            <img src="https://i.postimg.cc/3wFt7Yrx/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" alt="Dutra Mídias Logo" class="h-7 w-auto object-contain" />
+            <span class="w-px h-4 bg-primary/30"></span>
+            <span class="font-heading text-xs sm:text-sm font-extrabold tracking-[0.2em] text-foreground">DUTRA MÍDIAS</span>
+          </div>
+        </div>
+        <!-- Premium Badge -->
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-3 mb-6 relative group">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary/60 via-purple-500/50 to-primary/60 blur-[6px] opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+            <div class="relative flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/40 bg-white/80 backdrop-blur-sm shadow-lg">
+              <img src="https://i.postimg.cc/J7TMgcfb/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" alt="DM Logo" class="h-5 w-auto object-contain brightness-0 invert opacity-90 shrink-0" />
+              <span class="w-px h-4 bg-primary/40 shrink-0"></span>
+              <span class="text-primary text-base leading-none select-none" aria-hidden="true">✦</span>
+              <span class="text-foreground/90 font-semibold tracking-wide text-[10px] sm:text-xs md:text-sm uppercase">
+                Sua empresa nunca mais será a mesma depois da
+                <span class="text-primary font-extrabold">DM</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-extrabold text-foreground leading-[1.1] mb-6 sm:mb-8 tracking-tight">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">A assessoria que prova na pratica</span> por que empresas em Minas Gerais crescem mais rapido com a DM.
+        </h1>
+
+        <p class="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed max-w-2xl font-medium">
+          Aqui na Dutra Mídias, não vendemos historinha. Comprovamos resultados no seu nicho e expertise em trazer uma estratégia totalmente diferente do que você já fez em sua empresa, e te ajudamos a escalar a sua operação.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16">
+          <a href="#diagnostico" class="btn-glow bg-primary hover:bg-primary/95 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-5 rounded-lg shadow-[0_0_40px_-10px_#7C3AED] hover:shadow-[0_0_60px_-15px_#7C3AED] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+            Agendar diagnóstico estratégico
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="#metodo" class="font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-5 border-2 border-border rounded-lg hover:bg-secondary transition-all duration-300 text-center">
+            Ver como funciona
+          </a>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-4">
+          <div class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
+            <i data-lucide="calendar" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
+            <p class="font-heading font-bold text-foreground text-lg sm:text-2xl"><span class="counter" data-target="5" data-prefix="+">+5</span> anos</p>
+            <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">de experiência</p>
+          </div>
+          <div class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
+            <i data-lucide="users" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
+            <p class="font-heading font-bold text-foreground text-lg sm:text-2xl"><span class="counter" data-target="200" data-prefix="+">+200</span></p>
+            <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">empresas atendidas</p>
+          </div>
+          <div class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
+            <i data-lucide="trending-up" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
+            <p class="font-heading font-bold text-foreground text-lg sm:text-2xl">+R$<span class="counter" data-target="10" data-prefix="">10</span>M</p>
+            <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">Gerenciados em Anúncios</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Banner -->
+    <div class="hidden lg:flex absolute right-0 top-0 h-full w-1/2 items-center justify-center">
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/10 to-transparent pointer-events-none z-[5]"></div>
+      <img src="https://i.postimg.cc/DfLVMwBL/BANNER_DUTRA.png" alt="Banner Dutra Mídias" class="hero-img h-full w-full object-cover object-right" />
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== DIAGNOSTICO FORM ==================== -->
+<section id="diagnostico" class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white via-secondary/30 to-white relative overflow-hidden reveal">
+  <div class="absolute top-0 left-1/3 w-[700px] h-[700px] bg-primary/[0.08] rounded-full blur-[120px] pointer-events-none -translate-y-1/2"></div>
+  <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3"></div>
+
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
+      <!-- Left Content -->
+      <div class="max-w-xl">
+        <div class="inline-flex items-center gap-2 bg-red-500/[0.15] text-red-500 px-4 py-2 rounded-full text-sm font-bold mb-6 border border-red-500/30 uppercase tracking-wider">
+          ⚠️ Aviso
+        </div>
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.1] mb-4 tracking-tight">NÃO SAIA AGORA!</h2>
+        <p class="text-lg sm:text-xl md:text-2xl text-muted-foreground font-semibold mb-8 sm:mb-10 leading-relaxed">
+          Faltam <span class="text-foreground font-bold">poucos segundos</span> para sua operação
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 font-extrabold">MUDAR.</span>
+        </p>
+
+        <div class="space-y-5">
+          <div class="relative bg-secondary/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/60 overflow-hidden hover:border-primary/30 transition-all duration-300">
+            <div class="flex gap-4 sm:gap-5">
+              <div class="flex-shrink-0 w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30 font-heading">1</div>
+              <div>
+                <h3 class="font-heading text-lg font-bold text-foreground mb-2">Complete o formulário</h3>
+                <p class="text-muted-foreground leading-relaxed">Forneça suas <span class="text-foreground font-semibold">informações</span> no formulário ao lado. Garantimos a segurança total de seus dados. Serão usados apenas para contato.</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative bg-secondary/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/60 overflow-hidden hover:border-primary/30 transition-all duration-300">
+            <div class="flex gap-4 sm:gap-5">
+              <div class="flex-shrink-0 w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30 font-heading">2</div>
+              <div>
+                <h3 class="font-heading text-lg font-bold text-foreground mb-2 flex items-center gap-2">
+                  Iremos te chamar agora!
+                  <i data-lucide="message-circle" class="w-5 h-5 text-green-500"></i>
+                </h3>
+                <p class="text-muted-foreground leading-relaxed">Em um prazo de <span class="text-foreground font-semibold">até 10 minutos</span> em horário comercial, iremos ler as suas informações e um dos nossos especialistas <span class="text-foreground font-semibold">entrará em contato diretamente</span> com você pelo WhatsApp.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form -->
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-primary/30 via-purple-500/20 to-primary/30 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+        <div class="relative bg-white/90 backdrop-blur-xl rounded-2xl p-5 sm:p-8 border border-border/60 shadow-xl">
+          <h2 class="font-heading text-2xl font-bold text-foreground mb-6">Preencha seus dados</h2>
+          <form id="diagnostico-form" class="space-y-5">
+            <div>
+              <label class="text-foreground font-medium text-sm">Nome completo</label>
+              <input type="text" name="nome" placeholder="Seu nome" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
+            </div>
+            <div>
+              <label class="text-foreground font-medium text-sm">Nome da empresa</label>
+              <input type="text" name="empresa" placeholder="Nome da sua empresa" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
+            </div>
+            <div>
+              <label class="text-foreground font-medium text-sm">Nicho/Segmento</label>
+              <input type="text" name="nicho" placeholder="Ex: E-commerce, Clínica, Consultoria..." required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-foreground font-medium text-sm">Faturamento mensal</label>
+                <select name="faturamento" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
+                  <option value="">Selecione</option>
+                  <option value="ate-50k">Até R$50.000</option>
+                  <option value="50k-100k">R$50.000 - R$100.000</option>
+                  <option value="100k-300k">R$100.000 - R$300.000</option>
+                  <option value="300k-500k">R$300.000 - R$500.000</option>
+                  <option value="acima-500k">Acima de R$500.000</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-foreground font-medium text-sm">Ticket médio</label>
+                <select name="ticketMedio" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
+                  <option value="">Selecione</option>
+                  <option value="ate-500">Até R$500</option>
+                  <option value="500-2k">R$500 - R$2.000</option>
+                  <option value="2k-5k">R$2.000 - R$5.000</option>
+                  <option value="5k-10k">R$5.000 - R$10.000</option>
+                  <option value="acima-10k">Acima de R$10.000</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="text-foreground font-medium text-sm">Possui equipe comercial?</label>
+              <select name="equipeComercial" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+                <option value="em-estruturacao">Em estruturação</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-foreground font-medium text-sm">Principal objetivo</label>
+              <textarea name="objetivo" placeholder="Descreva brevemente o que você busca alcançar..." required rows="3" class="mt-2 w-full rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-lg py-4 rounded-xl shadow-[0_0_40px_-10px_#7C3AED] hover:shadow-[0_0_60px_-15px_#7C3AED] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+              Agendar diagnóstico estratégico
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+            <p class="text-xs text-muted-foreground text-center">Ao enviar, você concorda com nossa <a href="#" class="text-primary hover:underline">Política de Privacidade</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== SOBRE NÓS ==================== -->
+<section id="sobre" class="py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden reveal">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-20 items-center max-w-6xl mx-auto">
+      <!-- Polaroid Photos -->
+      <div class="flex items-center justify-center gap-4 sm:gap-0 sm:relative sm:h-[480px] md:h-[580px] lg:h-[660px]">
+        <div class="sm:absolute sm:left-4 md:left-8 sm:top-4 md:top-8 -rotate-6 hover:rotate-0 hover:scale-105 hover:z-20 transition-all duration-500 z-10 cursor-pointer">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-5 sm:h-6 bg-white/20 backdrop-blur-sm rotate-2 z-20 rounded-sm"></div>
+          <div class="bg-white p-2 sm:p-3 pb-10 sm:pb-14 rounded-sm shadow-2xl shadow-black/50 relative">
+            <img src="https://i.postimg.cc/8kn638dq/540672654-17987180489815675-811493573237547838-n-jpg.jpg" alt="Time Dutra Mídias" class="w-40 sm:w-64 md:w-80 lg:w-96 h-32 sm:h-44 md:h-52 lg:h-60 object-cover object-top rounded-sm" />
+            <p class="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 text-[#0a0a0a] font-bold text-sm sm:text-lg italic whitespace-nowrap font-heading">PREMIAÇÕES DM 🚀</p>
+          </div>
+        </div>
+        <div class="sm:absolute sm:right-4 md:right-8 sm:bottom-4 md:bottom-8 rotate-6 hover:rotate-0 hover:scale-105 hover:z-20 transition-all duration-500 z-10 cursor-pointer">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-5 sm:h-6 bg-white/20 backdrop-blur-sm -rotate-2 z-20 rounded-sm"></div>
+          <div class="bg-white p-2 sm:p-3 pb-10 sm:pb-14 rounded-sm shadow-2xl shadow-black/50 relative">
+            <img src="https://i.postimg.cc/bvK5LVC9/Screenshot-209.png" alt="Escritório Dutra Mídias" class="w-40 sm:w-64 md:w-80 lg:w-96 h-32 sm:h-44 md:h-52 lg:h-60 object-contain bg-gradient-to-br from-primary/20 to-purple-900/40 rounded-sm" />
+            <p class="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 text-[#0a0a0a] font-bold text-sm sm:text-lg italic whitespace-nowrap font-heading">RESULTADOS 💜</p>
+          </div>
+        </div>
+        <div class="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/5 rounded-full pointer-events-none"></div>
+      </div>
+
+      <!-- Text -->
+      <div class="text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-primary/[0.15] text-primary px-4 py-2 rounded-full text-sm font-bold mb-6 sm:mb-8 border border-primary/30 uppercase tracking-widest">Quem Somos</div>
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-[2.8rem] font-extrabold text-white leading-[1.15] mb-6 sm:mb-8 tracking-tight">
+          A ASSESSORIA QUE <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">TRANSFORMA ANÚNCIOS</span> EM <span class="text-white">VENDAS REAIS.</span>
+        </h2>
+        <div class="space-y-4 sm:space-y-5 text-gray-400 leading-relaxed text-sm sm:text-[15px] md:text-base">
+          <p>Se você está buscando maneiras de crescer, aumentar as vendas e atrair mais clientes qualificados, saiba que a gestão de tráfego é essencial. Mas a questão é: <span class="text-white font-semibold">nem todos os serviços de tráfego são iguais.</span> Contratar qualquer agência pode ser um risco se ela não oferecer algo realmente diferente e eficaz. É aí que entra o nosso método único.</p>
+          <p>Desenvolvemos uma abordagem personalizada que vai além das soluções "genéricas" de mercado. Nosso diferencial está em <span class="text-white font-semibold">analisar profundamente o seu projeto</span>, e fazer qualquer adaptação necessária para aumentar a performance. Identificar exatamente onde sua empresa está perdendo oportunidades e criar estratégias sob medida que não só trazem mais tráfego, mas atraem os <span class="text-white font-semibold">clientes certos</span>, aqueles que realmente convertem.</p>
+          <p>O nosso método vai além de apenas jogar anúncios e esperar por resultados. Em resumo, hoje em dia o tráfego é apenas uma parte do seu processo de vendas. E nós estamos preocupados com o resultado final: <span class="text-primary font-bold text-base sm:text-lg">VENDAS.</span></p>
+          <p>Nosso serviço vai desde a <span class="text-white font-semibold">análise de comunicação externa</span> com o cliente até ao <span class="text-white font-semibold">atendimento final e processo de vendas.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== PERSONALIZAÇÃO ==================== -->
+<section id="metodo" class="py-16 sm:py-24 lg:py-32 bg-white relative overflow-hidden reveal">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.08] rounded-full blur-[150px] pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-primary/[0.15] text-primary px-5 py-2 rounded-full text-sm font-bold mb-8 border border-primary/30 uppercase tracking-widest">Nosso Método</div>
+      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
+        Na <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">DM</span> você encontra a
+        <span class="relative inline-block">
+          <span class="relative z-10">personalização</span>
+          <span class="absolute bottom-1 left-0 w-full h-3 bg-primary/25 -z-0 -rotate-1 skew-x-6"></span>
+        </span>
+        que busca!
+      </h2>
+      <p class="text-lg md:text-xl text-muted-foreground font-medium mb-14 max-w-2xl mx-auto leading-relaxed">
+        Cada projeto que entra, é estudado a dor e dificuldades atuais do seu projeto. <span class="text-foreground font-semibold">Nada de copiar e colar.</span>
+      </p>
+      <div class="relative mx-auto max-w-2xl mb-8">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-purple-500/10 to-transparent blur-[60px] rounded-full pointer-events-none scale-110"></div>
+        <img src="GIF-DM.gif" alt="Método DM - Personalização" class="w-full h-auto object-contain relative z-10 rounded-2xl" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== CLIENTES ==================== -->
+<section class="py-16 sm:py-20 lg:py-28 bg-white reveal">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="text-center mb-12">
+      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+        Empresas que já confiaram na <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">Dutra Mídias</span>
+      </h2>
+      <p class="text-muted-foreground max-w-xl mx-auto">Mais de 200 empresas já transformaram seus resultados com nossas campanhas estratégicas.</p>
+    </div>
+    <div class="logos-mask">
+      <div class="logos-track">
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 1</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 2</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 3</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 4</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 5</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 6</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 7</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 8</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 1</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 2</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 3</div></div>
+        <div class="bg-white rounded-xl p-6 flex flex-col items-center justify-center gap-4 border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 logo-card"><div class="text-muted-foreground font-medium text-sm opacity-50">Logo 4</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== DEPOIMENTOS ==================== -->
+<section id="depoimentos" class="py-16 sm:py-20 lg:py-28 bg-secondary reveal">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">Depoimentos</div>
+      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        Veja o que nossos <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">clientes dizem</span>
+      </h2>
+    </div>
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-3 gap-8 mb-8">
+        <div class="lg:col-span-2 relative aspect-video bg-foreground/5 rounded-2xl overflow-hidden border border-border">
+          <div class="absolute inset-0 flex items-center justify-center bg-foreground/10">
+            <button class="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+              <i data-lucide="play" class="w-8 h-8 text-white ml-1"></i>
+            </button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-border flex flex-col justify-center">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <i data-lucide="quote" class="w-6 h-6 text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-foreground text-lg">Carlos Silva</h4>
+              <p class="text-muted-foreground text-sm">Tech Solutions • Tecnologia</p>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-col gap-4">
+            <div class="bg-red-50 rounded-lg p-4">
+              <p class="text-xs text-red-600 font-medium mb-1 uppercase tracking-wide">Antes</p>
+              <p class="text-sm text-foreground">Sem previsibilidade de vendas, dependia de indicações</p>
+            </div>
+            <div class="bg-green-50 rounded-lg p-4">
+              <p class="text-xs text-green-600 font-medium mb-1 uppercase tracking-wide">Depois</p>
+              <p class="text-sm text-foreground">+47 leads qualificados por semana, faturamento triplicou</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== PROCESSO DE CONTRATAÇÃO ==================== -->
+<section class="py-16 sm:py-20 lg:py-28 bg-white reveal">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">Como contratar</div>
+      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        Processo de <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">contratação simples</span>
+      </h2>
+      <p class="text-muted-foreground max-w-xl mx-auto">Em 4 passos você começa a gerar novos clientes para seu negócio.</p>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative">
+        <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-border"></div>
+        <!-- Step 1 -->
+        <div class="relative text-center">
+          <div class="relative z-10 w-24 h-24 mx-auto mb-6 bg-white border-2 border-primary rounded-full flex items-center justify-center">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center"><i data-lucide="calendar-check" class="w-8 h-8 text-white"></i></div>
+          </div>
+          <div class="absolute -top-2 right-1/2 translate-x-1/2 md:translate-x-0 md:right-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading">1</div>
+          <h4 class="font-heading text-lg font-bold text-foreground mb-2">Solicita diagnóstico</h4>
+          <p class="text-muted-foreground text-sm">Preencha o formulário com informações sobre seu negócio</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="relative text-center">
+          <div class="relative z-10 w-24 h-24 mx-auto mb-6 bg-white border-2 border-primary rounded-full flex items-center justify-center">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                <path d="M16 4.4c-6.6 0-12 4.9-12 10.9 0 2.1.7 4.2 2 5.9L4 28l7-1.8c1.5.8 3.3 1.2 5 1.2 6.6 0 12-4.9 12-10.9S22.6 4.4 16 4.4zm0 20.2c-1.6 0-3.1-.4-4.4-1.1l-.6-.3-4.1 1.1 1.1-3.9-.4-.6c-1.2-1.5-1.8-3.3-1.8-5.1 0-4.7 4.3-8.5 9.6-8.5s9.6 3.8 9.6 8.5-4.3 8.5-9.6 8.5zm5-6.3c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.1.2-.5.7-.7.9-.1.2-.2.2-.4.1-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.5-1.2-.7-1.7-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.9 2.4 1 2.6.1.2 1.7 2.6 4.2 3.6.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.2-.2-.2-.4-.3z" />
+              </svg>
+            </div>
+          </div>
+          <div class="absolute -top-2 right-1/2 translate-x-1/2 md:translate-x-0 md:right-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading">2</div>
+          <h4 class="font-heading text-lg font-bold text-foreground mb-2">Análise estratégica</h4>
+          <p class="text-muted-foreground text-sm">Iremos te chamar no WhatsApp e conversar um pouco sobre o seu projeto.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="relative text-center">
+          <div class="relative z-10 w-24 h-24 mx-auto mb-6 bg-white border-2 border-primary rounded-full flex items-center justify-center">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center"><i data-lucide="video" class="w-8 h-8 text-white"></i></div>
+          </div>
+          <div class="absolute -top-2 right-1/2 translate-x-1/2 md:translate-x-0 md:right-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading">3</div>
+          <h4 class="font-heading text-lg font-bold text-foreground mb-2">Reunião online</h4>
+          <p class="text-muted-foreground text-sm">Apresentamos um plano personalizado para seu negócio</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="relative text-center">
+          <div class="relative z-10 w-24 h-24 mx-auto mb-6 bg-white border-2 border-primary rounded-full flex items-center justify-center">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center"><i data-lucide="rocket" class="w-8 h-8 text-white"></i></div>
+          </div>
+          <div class="absolute -top-2 right-1/2 translate-x-1/2 md:translate-x-0 md:right-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading">4</div>
+          <h4 class="font-heading text-lg font-bold text-foreground mb-2">Início da operação</h4>
+          <p class="text-muted-foreground text-sm">Começamos a executar as campanhas e gerar resultados</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== CTA FINAL ==================== -->
+<section class="py-16 sm:py-20 lg:py-28 bg-secondary border-t border-b border-border reveal">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        Precisa gerar <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">novos clientes</span> com frequência?
+      </h2>
+      <p class="text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto">Agende um diagnóstico estratégico gratuito e descubra como podemos ajudar seu negócio a crescer.</p>
+      <a href="#diagnostico" class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-lg transition-all">
+        Agendar diagnóstico estratégico
+        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+      <p class="text-muted-foreground text-sm mt-6 font-medium">Sem compromisso. Sem enrolação. Apenas estratégia.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-foreground text-white py-12 reveal">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <img src="https://i.postimg.cc/3wFt7Yrx/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" alt="Dutra Mídias Logo" class="h-10 w-auto object-contain" />
+          <span class="font-heading font-semibold text-xl text-white">Dutra Mídias</span>
+        </div>
+        <p class="text-white/70 max-w-md leading-relaxed">Estruturamos e operamos campanhas de tráfego pago com acompanhamento estratégico contínuo para gerar novos clientes toda semana.</p>
+      </div>
+      <div>
+        <h4 class="font-heading font-semibold mb-4 text-white">Links Rápidos</h4>
+        <nav class="flex flex-col gap-2">
+          <a href="#" class="text-white/70 hover:text-primary transition-colors">Home</a>
+          <a href="#metodo" class="text-white/70 hover:text-primary transition-colors">Como funciona</a>
+          <a href="#depoimentos" class="text-white/70 hover:text-primary transition-colors">Depoimentos</a>
+          <a href="#sobre" class="text-white/70 hover:text-primary transition-colors">Sobre</a>
+          <a href="#diagnostico" class="text-white/70 hover:text-primary transition-colors">Diagnóstico</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="font-heading font-semibold mb-4 text-white">Contato</h4>
+        <div class="flex flex-col gap-2 text-white/70">
+          <p>Dutramidias@gmail.com</p>
+          <p>Belo Horizonte</p>
+          <p>CNPJ: 42.743.137/0001-86</p>
+        </div>
+        <div class="flex gap-4 mt-4">
+          <a href="https://www.instagram.com/dutramidias/" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-primary transition-colors" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-white/50 text-sm">© 2026 Dutra Mídias. Todos os direitos reservados.</p>
+      <div class="flex gap-6 text-sm">
+        <a href="#" class="text-white/50 hover:text-primary transition-colors">Política de Privacidade</a>
+        <a href="#" class="text-white/50 hover:text-primary transition-colors">Termos de Uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-whatsapp">
+  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg class="w-6 h-6 text-white" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16 4.4c-6.6 0-12 4.9-12 10.9 0 2.1.7 4.2 2 5.9L4 28l7-1.8c1.5.8 3.3 1.2 5 1.2 6.6 0 12-4.9 12-10.9S22.6 4.4 16 4.4zm0 20.2c-1.6 0-3.1-.4-4.4-1.1l-.6-.3-4.1 1.1 1.1-3.9-.4-.6c-1.2-1.5-1.8-3.3-1.8-5.1 0-4.7 4.3-8.5 9.6-8.5s9.6 3.8 9.6 8.5-4.3 8.5-9.6 8.5zm5-6.3c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.1.2-.5.7-.7.9-.1.2-.2.2-.4.1-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.5-1.2-.7-1.7-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.9 2.4 1 2.6.1.2 1.7 2.6 4.2 3.6.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.2-.2-.2-.4-.3z" />
+    </svg>
+  </a>
+</div>
+
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+  // Initialize Lucide icons
+  lucide.createIcons();
+
+  // Loader
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const loader = document.getElementById('loader');
+      if (loader) loader.style.display = 'none';
+    }, 1300);
+  });
+
+  // Form submission -> WhatsApp
+  document.getElementById('diagnostico-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fd = new FormData(this);
+    const msg = encodeURIComponent(
+      `Olá! Gostaria de agendar um diagnóstico estratégico.\n\nNome: ${fd.get('nome')}\nEmpresa: ${fd.get('empresa')}\nNicho: ${fd.get('nicho')}\nFaturamento: ${fd.get('faturamento')}\nTicket Médio: ${fd.get('ticketMedio')}\nEquipe Comercial: ${fd.get('equipeComercial')}\nObjetivo: ${fd.get('objetivo')}`
+    );
+    window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
+  });
+
+  // Animated number counter on scroll
+  const counters = document.querySelectorAll('.counter');
+  const observerOptions = { threshold: 0.5 };
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const prefix = el.dataset.prefix || '';
+        let current = 0;
+        const increment = target / 40;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = prefix + Math.floor(current);
+        }, 50);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, observerOptions);
+  counters.forEach(c => counterObserver.observe(c));
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    revealElements.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+
+  // Parallax on hero image
+  const heroImg = document.querySelector('.hero-img');
+  window.addEventListener('scroll', () => {
+    if (!heroImg) return;
+    const scroll = window.scrollY;
+    heroImg.style.transform = `translateY(${scroll * 0.12}px)`;
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
