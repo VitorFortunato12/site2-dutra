@@ -66,6 +66,14 @@
     @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .logos-mask { overflow: hidden; }
     .logo-card { min-width: 180px; }
+    .testimonials-strip { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 2px 10px; }
+    .testimonials-strip::-webkit-scrollbar { display: none; }
+    .testimonials-strip { scrollbar-width: none; }
+    .testimonial-video-card { flex: 0 0 clamp(220px, 24vw, 320px); scroll-snap-align: start; }
+    .testimonial-nav-btn { width: 40px; height: 40px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #fff; display: inline-flex; align-items: center; justify-content: center; color: #0a0a0a; transition: all .25s ease; }
+    .testimonial-nav-btn:hover { border-color: rgba(124,58,237,.35); color: #7C3AED; box-shadow: 0 8px 20px rgba(10,10,10,.08); }
+    .testimonial-dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(10,10,10,.2); transition: all .25s ease; }
+    .testimonial-dot.active { width: 10px; height: 10px; background: #0a0a0a; }
     @keyframes float { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
   </style>
 </head>
@@ -376,36 +384,48 @@
         Veja o que nossos <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">clientes dizem</span>
       </h2>
     </div>
-    <div class="max-w-6xl mx-auto">
-      <div class="grid lg:grid-cols-3 gap-8 mb-8">
-        <div class="lg:col-span-2 relative aspect-video bg-foreground/5 rounded-2xl overflow-hidden border border-border">
-          <div class="absolute inset-0 flex items-center justify-center bg-foreground/10">
-            <button class="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
-              <i data-lucide="play" class="w-8 h-8 text-white ml-1"></i>
-            </button>
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-end gap-2 mb-4">
+        <button id="testimonials-prev" class="testimonial-nav-btn" type="button" aria-label="Ver depoimento anterior">
+          <i data-lucide="chevron-left" class="w-5 h-5"></i>
+        </button>
+        <button id="testimonials-next" class="testimonial-nav-btn" type="button" aria-label="Ver próximo depoimento">
+          <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div id="testimonials-strip" class="testimonials-strip mb-4" aria-label="Depoimentos em vídeo">
+        <div class="testimonial-video-card bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all duration-300">
+          <div class="aspect-[9/16] bg-foreground/5">
+            <iframe src="https://player.vimeo.com/video/1177364104?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Depoimento em video - Arlen"></iframe>
           </div>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-border flex flex-col justify-center">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-              <i data-lucide="quote" class="w-6 h-6 text-primary"></i>
-            </div>
-            <div>
-              <h4 class="font-heading font-bold text-foreground text-lg">Carlos Silva</h4>
-              <p class="text-muted-foreground text-sm">Tech Solutions • Tecnologia</p>
-            </div>
-          </div>
-          <div class="mt-6 flex flex-col gap-4">
-            <div class="bg-red-50 rounded-lg p-4">
-              <p class="text-xs text-red-600 font-medium mb-1 uppercase tracking-wide">Antes</p>
-              <p class="text-sm text-foreground">Sem previsibilidade de vendas, dependia de indicações</p>
-            </div>
-            <div class="bg-green-50 rounded-lg p-4">
-              <p class="text-xs text-green-600 font-medium mb-1 uppercase tracking-wide">Depois</p>
-              <p class="text-sm text-foreground">+47 leads qualificados por semana, faturamento triplicou</p>
-            </div>
+        <div class="testimonial-video-card bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all duration-300">
+          <div class="aspect-[9/16] bg-foreground/5">
+            <iframe src="https://player.vimeo.com/video/1177364152?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Depoimento em video - Pro Max"></iframe>
           </div>
         </div>
+        <div class="testimonial-video-card bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all duration-300">
+          <div class="aspect-[9/16] bg-foreground/5">
+            <iframe src="https://player.vimeo.com/video/1177364230?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Depoimento em video - Cliente 3"></iframe>
+          </div>
+        </div>
+        <div class="testimonial-video-card bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all duration-300">
+          <div class="aspect-[9/16] bg-foreground/5">
+            <iframe src="https://player.vimeo.com/video/1177364267?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Depoimento em video - Cliente 4"></iframe>
+          </div>
+        </div>
+        <div class="testimonial-video-card bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all duration-300">
+          <div class="aspect-[9/16] bg-foreground/5">
+            <iframe src="https://player.vimeo.com/video/1177364312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Depoimento em video - Cliente 5"></iframe>
+          </div>
+        </div>
+      </div>
+      <div id="testimonials-dots" class="flex items-center justify-center gap-2" aria-label="Navegação dos depoimentos">
+        <button class="testimonial-dot active" data-index="0" type="button" aria-label="Ir para vídeo 1"></button>
+        <button class="testimonial-dot" data-index="1" type="button" aria-label="Ir para vídeo 2"></button>
+        <button class="testimonial-dot" data-index="2" type="button" aria-label="Ir para vídeo 3"></button>
+        <button class="testimonial-dot" data-index="3" type="button" aria-label="Ir para vídeo 4"></button>
+        <button class="testimonial-dot" data-index="4" type="button" aria-label="Ir para vídeo 5"></button>
       </div>
     </div>
   </div>
@@ -603,6 +623,69 @@
     const scroll = window.scrollY;
     heroImg.style.transform = `translateY(${scroll * 0.12}px)`;
   });
+
+  // Testimonials slider controls
+  const testimonialsStrip = document.getElementById('testimonials-strip');
+  const testimonialsPrev = document.getElementById('testimonials-prev');
+  const testimonialsNext = document.getElementById('testimonials-next');
+  const testimonialsDots = document.querySelectorAll('#testimonials-dots .testimonial-dot');
+  const testimonialsCards = testimonialsStrip ? Array.from(testimonialsStrip.querySelectorAll('.testimonial-video-card')) : [];
+
+  if (testimonialsStrip && testimonialsCards.length > 0) {
+    let activeIndex = 0;
+
+    const getStep = () => {
+      const firstCard = testimonialsCards[0];
+      if (!firstCard) return 280;
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      return cardWidth + 16;
+    };
+
+    const goToIndex = (index) => {
+      const safeIndex = Math.max(0, Math.min(index, testimonialsCards.length - 1));
+      const card = testimonialsCards[safeIndex];
+      if (!card) return;
+      card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      activeIndex = safeIndex;
+      updateDots();
+    };
+
+    const updateDots = () => {
+      testimonialsDots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIndex);
+      });
+    };
+
+    const updateActiveFromScroll = () => {
+      const step = getStep();
+      const nextIndex = Math.round(testimonialsStrip.scrollLeft / step);
+      activeIndex = Math.max(0, Math.min(nextIndex, testimonialsCards.length - 1));
+      updateDots();
+    };
+
+    if (testimonialsPrev) {
+      testimonialsPrev.addEventListener('click', () => {
+        goToIndex(activeIndex - 1);
+      });
+    }
+
+    if (testimonialsNext) {
+      testimonialsNext.addEventListener('click', () => {
+        goToIndex(activeIndex + 1);
+      });
+    }
+
+    testimonialsDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.dataset.index || '0', 10);
+        goToIndex(idx);
+      });
+    });
+
+    testimonialsStrip.addEventListener('scroll', updateActiveFromScroll, { passive: true });
+    window.addEventListener('resize', updateActiveFromScroll);
+    updateDots();
+  }
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
