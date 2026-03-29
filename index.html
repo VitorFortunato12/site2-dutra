@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dutra Mídias — Assessoria de Tráfego Pago em Minas Gerais</title>
-  <meta name="description" content="A assessoria que prova na prática por que empresas em Minas Gerais crescem mais rápido com a DM. +200 empresas atendidas, +R$10M gerenciados em anúncios." />
-  <link rel="icon" type="image/png" href="https://i.postimg.cc/J7TMgcfb/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" />
+  <meta name="description"
+    content="A assessoria que prova na prática por que empresas em Minas Gerais crescem mais rápido com a DM. +200 empresas atendidas, +R$10M gerenciados em anúncios." />
+  <link rel="icon" type="image/png"
+    href="https://i.postimg.cc/J7TMgcfb/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -36,811 +39,1381 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap"
+    rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
   <style>
-    * { border-color: #e5e5e5; }
-    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #0a0a0a; }
-    .font-heading { font-family: 'Montserrat', sans-serif; }
-    @keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    .animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
-    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-    .animate-pulse { animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .animate-spin { animation: spin 1s linear infinite; }
-    @keyframes count-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .count-animated { animation: count-up 0.5s ease-out forwards; }
-    select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
-    #loader { position: fixed; inset: 0; background: #0b0b0f; display: flex; align-items: center; justify-content: center; z-index: 9999; }
-    #loader .logo { color: #a855f7; font-size: 56px; font-weight: 900; letter-spacing: 0.2em; text-shadow: 0 0 24px rgba(168, 85, 247, 0.6); animation: pulse 1.5s ease-in-out infinite; }
-    @keyframes pulse { 0% { opacity: 0.4; transform: scale(0.92); } 50% { opacity: 1; transform: scale(1); } 100% { opacity: 0.4; transform: scale(0.92); } }
-    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    .hero-img { transition: transform 0.2s ease; }
-    .btn-glow { box-shadow: 0 0 0 rgba(168, 85, 247, 0.7); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .btn-glow:hover { box-shadow: 0 0 22px rgba(168, 85, 247, 0.8); transform: translateY(-2px); }
-    .logos-track { display: flex; align-items: center; gap: 48px; animation: scroll 20s linear infinite; }
-    .logos-track:hover { animation-play-state: paused; }
-    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .logos-mask { overflow: hidden; }
-    .logo-card { min-width: 180px; }
-    .testimonials-strip { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 20px 4px 40px; }
-    .testimonials-strip::-webkit-scrollbar { display: none; }
-    .testimonials-strip { scrollbar-width: none; }
-    .testimonial-video-card { flex: 0 0 clamp(280px, 30vw, 340px); scroll-snap-align: start; }
-    .testimonial-nav-btn { width: 56px; height: 56px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #fff; display: inline-flex; align-items: center; justify-content: center; color: #0a0a0a; transition: all .3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .testimonial-nav-btn:hover { border-color: #7C3AED; color: #fff; background: #7C3AED; box-shadow: 0 12px 24px rgba(124, 58, 237, 0.2); transform: translateY(-2px); }
-    .testimonial-dot { width: 10px; height: 10px; border-radius: 9999px; background: rgba(124, 58, 237, 0.2); transition: all .3s ease; }
-    .testimonial-dot.active { width: 28px; background: #7C3AED; }
-    @keyframes shooting-line { 0% { transform: translateX(-100%); } 100% { transform: translateX(400%); } }
-    .animate-shooting { animation: shooting-line 3s infinite linear; }
-    @keyframes line-progress { from { height: 0; } to { height: 100%; } }
-    .animate-progress-v { animation: line-progress 2s ease-out forwards; }
-    @keyframes float { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+    * {
+      border-color: #e5e5e5;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FFFFFF;
+      color: #0a0a0a;
+    }
+
+    .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    @keyframes bounce-slow {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-bounce-slow {
+      animation: bounce-slow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .animate-pulse {
+      animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes count-up {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .count-animated {
+      animation: count-up 0.5s ease-out forwards;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #0b0b0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loader .logo {
+      color: #a855f7;
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-shadow: 0 0 24px rgba(168, 85, 247, 0.6);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.4;
+        transform: scale(0.92);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0.4;
+        transform: scale(0.92);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-img {
+      transition: transform 0.2s ease;
+    }
+
+    .btn-glow {
+      box-shadow: 0 0 0 rgba(168, 85, 247, 0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 22px rgba(168, 85, 247, 0.8);
+      transform: translateY(-2px);
+    }
+
+    .logos-track {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      animation: scroll 20s linear infinite;
+    }
+
+    .logos-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .logos-mask {
+      overflow: hidden;
+    }
+
+    .logo-card {
+      min-width: 180px;
+    }
+
+    .testimonials-strip {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 20px 4px 40px;
+    }
+
+    .testimonials-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonials-strip {
+      scrollbar-width: none;
+    }
+
+    .testimonial-video-card {
+      flex: 0 0 clamp(280px, 30vw, 340px);
+      scroll-snap-align: start;
+    }
+
+    .testimonial-nav-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 9999px;
+      border: 1px solid #e5e5e5;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #0a0a0a;
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-nav-btn:hover {
+      border-color: #7C3AED;
+      color: #fff;
+      background: #7C3AED;
+      box-shadow: 0 12px 24px rgba(124, 58, 237, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .testimonial-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: rgba(124, 58, 237, 0.2);
+      transition: all .3s ease;
+    }
+
+    .testimonial-dot.active {
+      width: 28px;
+      background: #7C3AED;
+    }
+
+    @keyframes shooting-line {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(400%);
+      }
+    }
+
+    .animate-shooting {
+      animation: shooting-line 3s infinite linear;
+    }
+
+    @keyframes line-progress {
+      from {
+        height: 0;
+      }
+
+      to {
+        height: 100%;
+      }
+    }
+
+    .animate-progress-v {
+      animation: line-progress 2s ease-out forwards;
+    }
+
+    @keyframes float {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
+
 <body class="min-h-screen">
 
-<div id="loader" aria-hidden="true">
-  <div class="logo">DM</div>
-</div>
-
-<!-- ==================== HERO ==================== -->
-<section class="relative min-h-screen flex items-center bg-white overflow-hidden">
-  <!-- Background Glows -->
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
-    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
+  <div id="loader" aria-hidden="true">
+    <div class="logo">DM</div>
   </div>
 
-  <div class="relative w-full h-full flex flex-col lg:flex-row items-center">
-    <!-- Mobile Image -->
-    <div class="w-full lg:hidden">
-      <img src="https://i.postimg.cc/2SqyZ3P7/dutra-mobila.png" alt="Dutra Midias Mobile Hero" class="w-full h-auto object-cover" />
-    </div>
-    <!-- Left Content -->
-    <div class="w-full lg:w-1/2 px-6 sm:px-10 lg:px-20 xl:px-32 py-12 lg:py-28 relative z-10 reveal text-center lg:text-left">
-      <div class="max-w-2xl mx-auto lg:mx-0">
-        <!-- Logo Marca -->
-        <div class="mb-8 flex justify-center lg:justify-start">
-          <img src="https://i.postimg.cc/3wFt7Yrx/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" alt="Dutra Mídias Logo" class="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_10px_25px_rgba(124,58,237,0.25)]" />
-        </div>
-        <!-- Premium Badge -->
-        <div class="mb-8 flex justify-center lg:justify-start">
-          <div class="inline-flex items-center gap-3 mb-6 relative group">
-            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary/60 via-purple-500/50 to-primary/60 blur-[6px] opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
-            <div class="relative flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/40 bg-white/80 backdrop-blur-sm shadow-lg">
-              <span class="text-foreground/90 font-semibold tracking-wide text-[10px] sm:text-xs md:text-sm uppercase">
-                Sua empresa nunca mais será a mesma depois da
-                <span class="text-primary font-extrabold">DM</span>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-extrabold text-foreground leading-[1.1] mb-6 sm:mb-8 tracking-tight">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">A assessoria que prova na pratica</span> por que empresas em Minas Gerais crescem mais rapido com a DM.
-        </h1>
-
-        <p class="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed max-w-2xl font-medium">
-          Aqui na Dutra Mídias, não vendemos historinha. Comprovamos resultados no seu nicho e expertise em trazer uma estratégia totalmente diferente do que você já fez em sua empresa, e te ajudamos a escalar a sua operação.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16 justify-center lg:justify-start">
-          <a href="#diagnostico" class="btn-glow bg-primary hover:bg-primary/95 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-5 rounded-lg shadow-[0_0_40px_-10px_#7C3AED] hover:shadow-[0_0_60px_-15px_#7C3AED] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
-            Agendar diagnóstico estratégico
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </a>
-          <a href="#metodo" class="font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-5 border-2 border-border rounded-lg hover:bg-secondary transition-all duration-300 text-center">
-            Ver como funciona
-          </a>
-        </div>
-
-        <!-- Stats Cards -->
-        <div class="grid grid-cols-3 gap-3 sm:gap-4 mx-auto lg:mx-0">
-          <div class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
-            <i data-lucide="calendar" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
-            <p class="font-heading font-bold text-foreground text-lg sm:text-2xl"><span class="counter" data-target="5" data-prefix="+">+5</span> anos</p>
-            <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">de experiência</p>
-          </div>
-          <div class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
-            <i data-lucide="users" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
-            <p class="font-heading font-bold text-foreground text-lg sm:text-2xl"><span class="counter" data-target="200" data-prefix="+">+200</span></p>
-            <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">empresas atendidas</p>
-          </div>
-          <div class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
-            <i data-lucide="trending-up" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
-            <p class="font-heading font-bold text-foreground text-lg sm:text-2xl">+R$<span class="counter" data-target="10" data-prefix="">10</span>M</p>
-            <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">Gerenciados em Anúncios</p>
-          </div>
-        </div>
+  <!-- ==================== HERO ==================== -->
+  <section class="relative min-h-screen flex items-center bg-white overflow-hidden">
+    <!-- Background Glows -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div
+        class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3">
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4">
       </div>
     </div>
 
-    <!-- Right Banner -->
-    <div class="hidden lg:flex absolute right-0 top-0 h-full w-1/2 items-center justify-center">
-      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/10 to-transparent pointer-events-none z-[5]"></div>
-      <img src="https://i.postimg.cc/DfLVMwBL/BANNER_DUTRA.png" alt="Banner Dutra Mídias" class="hero-img h-full w-full object-cover object-right" />
-    </div>
-  </div>
-</section>
-
-
-<!-- ==================== DIAGNOSTICO FORM ==================== -->
-<section id="diagnostico" class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white via-secondary/30 to-white relative overflow-hidden reveal">
-  <div class="absolute top-0 left-1/3 w-[700px] h-[700px] bg-primary/[0.08] rounded-full blur-[120px] pointer-events-none -translate-y-1/2"></div>
-  <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3"></div>
-
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
+    <div class="relative w-full h-full flex flex-col lg:flex-row items-center">
+      <!-- Mobile Image -->
+      <div class="w-full lg:hidden">
+        <img src="https://i.postimg.cc/2SqyZ3P7/dutra-mobila.png" alt="Dutra Midias Mobile Hero"
+          class="w-full h-auto object-cover" />
+      </div>
       <!-- Left Content -->
-      <div class="max-w-xl">
-        <div class="inline-flex items-center gap-2 bg-red-500/[0.15] text-red-500 px-4 py-2 rounded-full text-sm font-bold mb-6 border border-red-500/30 uppercase tracking-wider">
-          ⚠️ Aviso
-        </div>
-        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.1] mb-4 tracking-tight">NÃO SAIA AGORA!</h2>
-        <p class="text-lg sm:text-xl md:text-2xl text-muted-foreground font-semibold mb-8 sm:mb-10 leading-relaxed">
-          Faltam <span class="text-foreground font-bold">poucos segundos</span> para sua operação
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 font-extrabold">MUDAR.</span>
-        </p>
-
-        <div class="space-y-5">
-          <div class="relative bg-secondary/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/60 overflow-hidden hover:border-primary/30 transition-all duration-300">
-            <div class="flex gap-4 sm:gap-5">
-              <div class="flex-shrink-0 w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30 font-heading">1</div>
-              <div>
-                <h3 class="font-heading text-lg font-bold text-foreground mb-2">Complete o formulário</h3>
-                <p class="text-muted-foreground leading-relaxed">Forneça suas <span class="text-foreground font-semibold">informações</span> no formulário ao lado. Garantimos a segurança total de seus dados. Serão usados apenas para contato.</p>
+      <div
+        class="w-full lg:w-1/2 px-6 sm:px-10 lg:px-20 xl:px-32 py-12 lg:py-28 relative z-10 reveal text-center lg:text-left">
+        <div class="max-w-2xl mx-auto lg:mx-0">
+          <!-- Logo Marca -->
+          <div class="mb-8 flex justify-center lg:justify-start">
+            <img src="https://i.postimg.cc/3wFt7Yrx/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png"
+              alt="Dutra Mídias Logo"
+              class="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_10px_25px_rgba(124,58,237,0.25)]" />
+          </div>
+          <!-- Premium Badge -->
+          <div class="mb-8 flex justify-center lg:justify-start">
+            <div class="inline-flex items-center gap-3 mb-6 relative group">
+              <div
+                class="absolute inset-0 rounded-full bg-gradient-to-r from-primary/60 via-purple-500/50 to-primary/60 blur-[6px] opacity-60 group-hover:opacity-90 transition-opacity duration-500">
+              </div>
+              <div
+                class="relative flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/40 bg-white/80 backdrop-blur-sm shadow-lg">
+                <span
+                  class="text-foreground/90 font-semibold tracking-wide text-[10px] sm:text-xs md:text-sm uppercase">
+                  Sua empresa nunca mais será a mesma depois da
+                  <span class="text-primary font-extrabold">DM</span>
+                </span>
               </div>
             </div>
           </div>
-          <div class="relative bg-secondary/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/60 overflow-hidden hover:border-primary/30 transition-all duration-300">
-            <div class="flex gap-4 sm:gap-5">
-              <div class="flex-shrink-0 w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30 font-heading">2</div>
-              <div>
-                <h3 class="font-heading text-lg font-bold text-foreground mb-2 flex items-center gap-2">
-                  Iremos te chamar agora!
-                  <i data-lucide="message-circle" class="w-5 h-5 text-green-500"></i>
-                </h3>
-                <p class="text-muted-foreground leading-relaxed">Em um prazo de <span class="text-foreground font-semibold">até 10 minutos</span> em horário comercial, iremos ler as suas informações e um dos nossos especialistas <span class="text-foreground font-semibold">entrará em contato diretamente</span> com você pelo WhatsApp.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Right Form -->
-      <div class="relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-primary/30 via-purple-500/20 to-primary/30 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
-        <div class="relative bg-white/90 backdrop-blur-xl rounded-2xl p-5 sm:p-8 border border-border/60 shadow-xl">
-          <h2 class="font-heading text-2xl font-bold text-foreground mb-6">Preencha seus dados</h2>
-          <form id="diagnostico-form" class="space-y-5">
-            <div>
-              <label class="text-foreground font-medium text-sm">Nome completo</label>
-              <input type="text" name="nome" placeholder="Seu nome" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
-            </div>
-            <div>
-              <label class="text-foreground font-medium text-sm">Nome da empresa</label>
-              <input type="text" name="empresa" placeholder="Nome da sua empresa" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
-            </div>
-            <div>
-              <label class="text-foreground font-medium text-sm">Nicho/Segmento</label>
-              <input type="text" name="nicho" placeholder="Ex: E-commerce, Clínica, Consultoria..." required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
-            </div>
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-foreground font-medium text-sm">Faturamento mensal</label>
-                <select name="faturamento" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
-                  <option value="">Selecione</option>
-                  <option value="ate-50k">Até R$50.000</option>
-                  <option value="50k-100k">R$50.000 - R$100.000</option>
-                  <option value="100k-300k">R$100.000 - R$300.000</option>
-                  <option value="300k-500k">R$300.000 - R$500.000</option>
-                  <option value="acima-500k">Acima de R$500.000</option>
-                </select>
-              </div>
-              <div>
-                <label class="text-foreground font-medium text-sm">Ticket médio</label>
-                <select name="ticketMedio" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
-                  <option value="">Selecione</option>
-                  <option value="ate-500">Até R$500</option>
-                  <option value="500-2k">R$500 - R$2.000</option>
-                  <option value="2k-5k">R$2.000 - R$5.000</option>
-                  <option value="5k-10k">R$5.000 - R$10.000</option>
-                  <option value="acima-10k">Acima de R$10.000</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label class="text-foreground font-medium text-sm">Possui equipe comercial?</label>
-              <select name="equipeComercial" required class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
-                <option value="">Selecione</option>
-                <option value="sim">Sim</option>
-                <option value="nao">Não</option>
-                <option value="em-estruturacao">Em estruturação</option>
-              </select>
-            </div>
-            <div>
-              <label class="text-foreground font-medium text-sm">Principal objetivo</label>
-              <textarea name="objetivo" placeholder="Descreva brevemente o que você busca alcançar..." required rows="3" class="mt-2 w-full rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"></textarea>
-            </div>
-            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-lg py-4 rounded-xl shadow-[0_0_40px_-10px_#7C3AED] hover:shadow-[0_0_60px_-15px_#7C3AED] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+          <h1
+            class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-extrabold text-foreground leading-[1.1] mb-6 sm:mb-8 tracking-tight">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">A assessoria
+              que prova na pratica</span> por que empresas em Minas Gerais crescem mais rapido com a DM.
+          </h1>
+
+          <p
+            class="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed max-w-2xl font-medium">
+            Aqui na Dutra Mídias, não vendemos historinha. Comprovamos resultados no seu nicho e expertise em trazer uma
+            estratégia totalmente diferente do que você já fez em sua empresa, e te ajudamos a escalar a sua operação.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16 justify-center lg:justify-start">
+            <a href="#diagnostico"
+              class="btn-glow bg-primary hover:bg-primary/95 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-5 rounded-lg shadow-[0_0_40px_-10px_#7C3AED] hover:shadow-[0_0_60px_-15px_#7C3AED] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
               Agendar diagnóstico estratégico
               <i data-lucide="arrow-right" class="w-5 h-5"></i>
-            </button>
-            <p class="text-xs text-muted-foreground text-center">Ao enviar, você concorda com nossa <a href="#" class="text-primary hover:underline">Política de Privacidade</a></p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            </a>
+            <a href="#metodo"
+              class="font-semibold text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-5 border-2 border-border rounded-lg hover:bg-secondary transition-all duration-300 text-center">
+              Ver como funciona
+            </a>
+          </div>
 
-
-<!-- ==================== SOBRE NÓS ==================== -->
-<section id="sobre" class="py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden reveal">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-20 items-center max-w-6xl mx-auto">
-      <!-- Polaroid Photos -->
-      <div class="flex items-center justify-center gap-4 sm:gap-0 sm:relative sm:h-[480px] md:h-[580px] lg:h-[660px]">
-        <div class="sm:absolute sm:left-4 md:left-8 sm:top-4 md:top-8 -rotate-6 hover:rotate-0 hover:scale-105 hover:z-20 transition-all duration-500 z-10 cursor-pointer">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-5 sm:h-6 bg-white/20 backdrop-blur-sm rotate-2 z-20 rounded-sm"></div>
-          <div class="bg-white p-2 sm:p-3 pb-10 sm:pb-14 rounded-sm shadow-2xl shadow-black/50 relative">
-            <img src="https://i.postimg.cc/8kn638dq/540672654-17987180489815675-811493573237547838-n-jpg.jpg" alt="Time Dutra Mídias" class="w-40 sm:w-64 md:w-80 lg:w-96 h-32 sm:h-44 md:h-52 lg:h-60 object-cover object-top rounded-sm" />
-            <p class="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 text-[#0a0a0a] font-bold text-sm sm:text-lg italic whitespace-nowrap font-heading">PREMIAÇÕES DM 🚀</p>
+          <!-- Stats Cards -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 mx-auto lg:mx-0">
+            <div
+              class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
+              <i data-lucide="calendar" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
+              <p class="font-heading font-bold text-foreground text-lg sm:text-2xl"><span class="counter"
+                  data-target="5" data-prefix="+">+5</span> anos</p>
+              <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">de
+                experiência</p>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
+              <i data-lucide="users" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
+              <p class="font-heading font-bold text-foreground text-lg sm:text-2xl"><span class="counter"
+                  data-target="200" data-prefix="+">+200</span></p>
+              <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">empresas
+                atendidas</p>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center p-3 sm:p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-border/60 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all duration-300">
+              <i data-lucide="trending-up" class="w-6 h-6 text-primary mb-3 opacity-90"></i>
+              <p class="font-heading font-bold text-foreground text-lg sm:text-2xl">+R$<span class="counter"
+                  data-target="10" data-prefix="">10</span>M</p>
+              <p class="text-muted-foreground text-xs text-center font-bold uppercase tracking-wider mt-1">Gerenciados
+                em Anúncios</p>
+            </div>
           </div>
         </div>
-        <div class="sm:absolute sm:right-4 md:right-8 sm:bottom-4 md:bottom-8 rotate-6 hover:rotate-0 hover:scale-105 hover:z-20 transition-all duration-500 z-10 cursor-pointer">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-5 sm:h-6 bg-white/20 backdrop-blur-sm -rotate-2 z-20 rounded-sm"></div>
-          <div class="bg-white p-2 sm:p-3 pb-10 sm:pb-14 rounded-sm shadow-2xl shadow-black/50 relative">
-            <img src="https://i.postimg.cc/bvK5LVC9/Screenshot-209.png" alt="Escritório Dutra Mídias" class="w-40 sm:w-64 md:w-80 lg:w-96 h-32 sm:h-44 md:h-52 lg:h-60 object-contain bg-gradient-to-br from-primary/20 to-purple-900/40 rounded-sm" />
-            <p class="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 text-[#0a0a0a] font-bold text-sm sm:text-lg italic whitespace-nowrap font-heading">RESULTADOS 💜</p>
+      </div>
+
+      <!-- Right Banner -->
+      <div class="hidden lg:flex absolute right-0 top-0 h-full w-1/2 items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/10 to-transparent pointer-events-none z-[5]">
+        </div>
+        <img src="https://i.postimg.cc/DfLVMwBL/BANNER_DUTRA.png" alt="Banner Dutra Mídias"
+          class="hero-img h-full w-full object-cover object-right" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== DIAGNOSTICO FORM ==================== -->
+  <section id="diagnostico"
+    class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white via-secondary/30 to-white relative overflow-hidden reveal">
+    <div
+      class="absolute top-0 left-1/3 w-[700px] h-[700px] bg-primary/[0.08] rounded-full blur-[120px] pointer-events-none -translate-y-1/2">
+    </div>
+    <div
+      class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
+        <!-- Left Content -->
+        <div class="max-w-xl">
+          <div
+            class="inline-flex items-center gap-2 bg-red-500/[0.15] text-red-500 px-4 py-2 rounded-full text-sm font-bold mb-6 border border-red-500/30 uppercase tracking-wider">
+            ⚠️ Aviso
+          </div>
+          <h2
+            class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.1] mb-4 tracking-tight">
+            NÃO SAIA AGORA!</h2>
+          <p class="text-lg sm:text-xl md:text-2xl text-muted-foreground font-semibold mb-8 sm:mb-10 leading-relaxed">
+            Faltam <span class="text-foreground font-bold">poucos segundos</span> para sua operação
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 font-extrabold">MUDAR.</span>
+          </p>
+
+          <div class="space-y-5">
+            <div
+              class="relative bg-secondary/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/60 overflow-hidden hover:border-primary/30 transition-all duration-300">
+              <div class="flex gap-4 sm:gap-5">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30 font-heading">
+                  1</div>
+                <div>
+                  <h3 class="font-heading text-lg font-bold text-foreground mb-2">Complete o formulário</h3>
+                  <p class="text-muted-foreground leading-relaxed">Forneça suas <span
+                      class="text-foreground font-semibold">informações</span> no formulário ao lado. Garantimos a
+                    segurança total de seus dados. Serão usados apenas para contato.</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative bg-secondary/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/60 overflow-hidden hover:border-primary/30 transition-all duration-300">
+              <div class="flex gap-4 sm:gap-5">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30 font-heading">
+                  2</div>
+                <div>
+                  <h3 class="font-heading text-lg font-bold text-foreground mb-2 flex items-center gap-2">
+                    Iremos te chamar agora!
+                    <i data-lucide="message-circle" class="w-5 h-5 text-green-500"></i>
+                  </h3>
+                  <p class="text-muted-foreground leading-relaxed">Em um prazo de <span
+                      class="text-foreground font-semibold">até 10 minutos</span> em horário comercial, iremos ler as
+                    suas informações e um dos nossos especialistas <span class="text-foreground font-semibold">entrará
+                      em contato diretamente</span> com você pelo WhatsApp.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/5 rounded-full pointer-events-none"></div>
-      </div>
 
-      <!-- Text -->
-      <div class="text-center lg:text-left">
-        <div class="inline-flex items-center gap-2 bg-primary/[0.15] text-primary px-4 py-2 rounded-full text-sm font-bold mb-6 sm:mb-8 border border-primary/30 uppercase tracking-widest">Quem Somos</div>
-        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-[2.8rem] font-extrabold text-white leading-[1.15] mb-6 sm:mb-8 tracking-tight">
-          A ASSESSORIA QUE <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">TRANSFORMA ANÚNCIOS</span> EM <span class="text-white">VENDAS REAIS.</span>
+        <!-- Right Form -->
+        <div class="relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-primary/30 via-purple-500/20 to-primary/30 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500">
+          </div>
+          <div class="relative bg-white/90 backdrop-blur-xl rounded-2xl p-5 sm:p-8 border border-border/60 shadow-xl">
+            <h2 class="font-heading text-2xl font-bold text-foreground mb-6">Preencha seus dados</h2>
+            <form id="diagnostico-form" class="space-y-5">
+              <div>
+                <label class="text-foreground font-medium text-sm">Nome completo</label>
+                <input type="text" name="nome" placeholder="Seu nome" required
+                  class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
+              </div>
+              <div>
+                <label class="text-foreground font-medium text-sm">Nome da empresa</label>
+                <input type="text" name="empresa" placeholder="Nome da sua empresa" required
+                  class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
+              </div>
+              <div>
+                <label class="text-foreground font-medium text-sm">Nicho/Segmento</label>
+                <input type="text" name="nicho" placeholder="Ex: E-commerce, Clínica, Consultoria..." required
+                  class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all" />
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-foreground font-medium text-sm">Faturamento mensal</label>
+                  <select name="faturamento" required
+                    class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
+                    <option value="">Selecione</option>
+                    <option value="ate-50k">Até R$50.000</option>
+                    <option value="50k-100k">R$50.000 - R$100.000</option>
+                    <option value="100k-300k">R$100.000 - R$300.000</option>
+                    <option value="300k-500k">R$300.000 - R$500.000</option>
+                    <option value="acima-500k">Acima de R$500.000</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-foreground font-medium text-sm">Ticket médio</label>
+                  <select name="ticketMedio" required
+                    class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
+                    <option value="">Selecione</option>
+                    <option value="ate-500">Até R$500</option>
+                    <option value="500-2k">R$500 - R$2.000</option>
+                    <option value="2k-5k">R$2.000 - R$5.000</option>
+                    <option value="5k-10k">R$5.000 - R$10.000</option>
+                    <option value="acima-10k">Acima de R$10.000</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="text-foreground font-medium text-sm">Possui equipe comercial?</label>
+                <select name="equipeComercial" required
+                  class="mt-2 w-full h-11 rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
+                  <option value="">Selecione</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                  <option value="em-estruturacao">Em estruturação</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-foreground font-medium text-sm">Principal objetivo</label>
+                <textarea name="objetivo" placeholder="Descreva brevemente o que você busca alcançar..." required
+                  rows="3"
+                  class="mt-2 w-full rounded-lg border border-input bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"></textarea>
+              </div>
+              <button type="submit"
+                class="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-lg py-4 rounded-xl shadow-[0_0_40px_-10px_#7C3AED] hover:shadow-[0_0_60px_-15px_#7C3AED] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+                Agendar diagnóstico estratégico
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </button>
+              <p class="text-xs text-muted-foreground text-center">Ao enviar, você concorda com nossa <a href="#"
+                  class="text-primary hover:underline">Política de Privacidade</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SOBRE NÓS ==================== -->
+  <section id="sobre" class="py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden reveal">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-20 items-center max-w-6xl mx-auto">
+        <!-- Polaroid Photos -->
+        <div class="flex items-center justify-center gap-4 sm:gap-0 sm:relative sm:h-[480px] md:h-[580px] lg:h-[660px]">
+          <div
+            class="sm:absolute sm:left-4 md:left-8 sm:top-4 md:top-8 -rotate-6 hover:rotate-0 hover:scale-105 hover:z-20 transition-all duration-500 z-10 cursor-pointer">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-5 sm:h-6 bg-white/20 backdrop-blur-sm rotate-2 z-20 rounded-sm">
+            </div>
+            <div class="bg-white p-2 sm:p-3 pb-10 sm:pb-14 rounded-sm shadow-2xl shadow-black/50 relative">
+              <img src="https://i.postimg.cc/8kn638dq/540672654-17987180489815675-811493573237547838-n-jpg.jpg"
+                alt="Time Dutra Mídias"
+                class="w-40 sm:w-64 md:w-80 lg:w-96 h-32 sm:h-44 md:h-52 lg:h-60 object-cover object-top rounded-sm" />
+              <p
+                class="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 text-[#0a0a0a] font-bold text-sm sm:text-lg italic whitespace-nowrap font-heading">
+                PREMIAÇÕES DM 🚀</p>
+            </div>
+          </div>
+          <div
+            class="sm:absolute sm:right-4 md:right-8 sm:bottom-4 md:bottom-8 rotate-6 hover:rotate-0 hover:scale-105 hover:z-20 transition-all duration-500 z-10 cursor-pointer">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-5 sm:h-6 bg-white/20 backdrop-blur-sm -rotate-2 z-20 rounded-sm">
+            </div>
+            <div class="bg-white p-2 sm:p-3 pb-10 sm:pb-14 rounded-sm shadow-2xl shadow-black/50 relative">
+              <img src="https://i.postimg.cc/bvK5LVC9/Screenshot-209.png" alt="Escritório Dutra Mídias"
+                class="w-40 sm:w-64 md:w-80 lg:w-96 h-32 sm:h-44 md:h-52 lg:h-60 object-contain bg-gradient-to-br from-primary/20 to-purple-900/40 rounded-sm" />
+              <p
+                class="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 text-[#0a0a0a] font-bold text-sm sm:text-lg italic whitespace-nowrap font-heading">
+                RESULTADOS 💜</p>
+            </div>
+          </div>
+          <div
+            class="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/5 rounded-full pointer-events-none">
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="text-center lg:text-left">
+          <div
+            class="inline-flex items-center gap-2 bg-primary/[0.15] text-primary px-4 py-2 rounded-full text-sm font-bold mb-6 sm:mb-8 border border-primary/30 uppercase tracking-widest">
+            Quem Somos</div>
+          <h2
+            class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-[2.8rem] font-extrabold text-white leading-[1.15] mb-6 sm:mb-8 tracking-tight">
+            A ASSESSORIA QUE <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">TRANSFORMA
+              ANÚNCIOS</span> EM <span class="text-white">VENDAS REAIS.</span>
+          </h2>
+          <div class="space-y-4 sm:space-y-5 text-gray-400 leading-relaxed text-sm sm:text-[15px] md:text-base">
+            <p>Se você está buscando maneiras de crescer, aumentar as vendas e atrair mais clientes qualificados, saiba
+              que a gestão de tráfego é essencial. Mas a questão é: <span class="text-white font-semibold">nem todos os
+                serviços de tráfego são iguais.</span> Contratar qualquer agência pode ser um risco se ela não oferecer
+              algo realmente diferente e eficaz. É aí que entra o nosso método único.</p>
+            <p>Desenvolvemos uma abordagem personalizada que vai além das soluções "genéricas" de mercado. Nosso
+              diferencial está em <span class="text-white font-semibold">analisar profundamente o seu projeto</span>, e
+              fazer qualquer adaptação necessária para aumentar a performance. Identificar exatamente onde sua empresa
+              está perdendo oportunidades e criar estratégias sob medida que não só trazem mais tráfego, mas atraem os
+              <span class="text-white font-semibold">clientes certos</span>, aqueles que realmente convertem.</p>
+            <p>O nosso método vai além de apenas jogar anúncios e esperar por resultados. Em resumo, hoje em dia o
+              tráfego é apenas uma parte do seu processo de vendas. E nós estamos preocupados com o resultado final:
+              <span class="text-primary font-bold text-base sm:text-lg">VENDAS.</span></p>
+            <p>Nosso serviço vai desde a <span class="text-white font-semibold">análise de comunicação externa</span>
+              com o cliente até ao <span class="text-white font-semibold">atendimento final e processo de vendas.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PERSONALIZAÇÃO ==================== -->
+  <section id="metodo" class="py-16 sm:py-24 lg:py-32 bg-white relative overflow-hidden reveal">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.08] rounded-full blur-[150px] pointer-events-none">
+    </div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="inline-flex items-center gap-2 bg-primary/[0.15] text-primary px-5 py-2 rounded-full text-sm font-bold mb-8 border border-primary/30 uppercase tracking-widest">
+          Nosso Método</div>
+        <h2
+          class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
+          Na <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">DM</span> você
+          encontra a
+          <span class="relative inline-block">
+            <span class="relative z-10">personalização</span>
+            <span class="absolute bottom-1 left-0 w-full h-3 bg-primary/25 -z-0 -rotate-1 skew-x-6"></span>
+          </span>
+          que busca!
         </h2>
-        <div class="space-y-4 sm:space-y-5 text-gray-400 leading-relaxed text-sm sm:text-[15px] md:text-base">
-          <p>Se você está buscando maneiras de crescer, aumentar as vendas e atrair mais clientes qualificados, saiba que a gestão de tráfego é essencial. Mas a questão é: <span class="text-white font-semibold">nem todos os serviços de tráfego são iguais.</span> Contratar qualquer agência pode ser um risco se ela não oferecer algo realmente diferente e eficaz. É aí que entra o nosso método único.</p>
-          <p>Desenvolvemos uma abordagem personalizada que vai além das soluções "genéricas" de mercado. Nosso diferencial está em <span class="text-white font-semibold">analisar profundamente o seu projeto</span>, e fazer qualquer adaptação necessária para aumentar a performance. Identificar exatamente onde sua empresa está perdendo oportunidades e criar estratégias sob medida que não só trazem mais tráfego, mas atraem os <span class="text-white font-semibold">clientes certos</span>, aqueles que realmente convertem.</p>
-          <p>O nosso método vai além de apenas jogar anúncios e esperar por resultados. Em resumo, hoje em dia o tráfego é apenas uma parte do seu processo de vendas. E nós estamos preocupados com o resultado final: <span class="text-primary font-bold text-base sm:text-lg">VENDAS.</span></p>
-          <p>Nosso serviço vai desde a <span class="text-white font-semibold">análise de comunicação externa</span> com o cliente até ao <span class="text-white font-semibold">atendimento final e processo de vendas.</span></p>
+        <p class="text-lg md:text-xl text-muted-foreground font-medium mb-14 max-w-2xl mx-auto leading-relaxed">
+          Cada projeto que entra, é estudado a dor e dificuldades atuais do seu projeto. <span
+            class="text-foreground font-semibold">Nada de copiar e colar.</span>
+        </p>
+        <div class="relative mx-auto max-w-2xl mb-8">
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-primary/20 via-purple-500/10 to-transparent blur-[60px] rounded-full pointer-events-none scale-110">
+          </div>
+          <div class="relative z-10 rounded-2xl overflow-hidden bg-white">
+            <img src="GIF-DM.gif" alt="Método DM - Personalização" class="w-full h-auto object-cover scale-[1.03]" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ==================== PERSONALIZAÇÃO ==================== -->
-<section id="metodo" class="py-16 sm:py-24 lg:py-32 bg-white relative overflow-hidden reveal">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.08] rounded-full blur-[150px] pointer-events-none"></div>
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 bg-primary/[0.15] text-primary px-5 py-2 rounded-full text-sm font-bold mb-8 border border-primary/30 uppercase tracking-widest">Nosso Método</div>
-      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
-        Na <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">DM</span> você encontra a
-        <span class="relative inline-block">
-          <span class="relative z-10">personalização</span>
-          <span class="absolute bottom-1 left-0 w-full h-3 bg-primary/25 -z-0 -rotate-1 skew-x-6"></span>
-        </span>
-        que busca!
-      </h2>
-      <p class="text-lg md:text-xl text-muted-foreground font-medium mb-14 max-w-2xl mx-auto leading-relaxed">
-        Cada projeto que entra, é estudado a dor e dificuldades atuais do seu projeto. <span class="text-foreground font-semibold">Nada de copiar e colar.</span>
-      </p>
-      <div class="relative mx-auto max-w-2xl mb-8">
-        <div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-purple-500/10 to-transparent blur-[60px] rounded-full pointer-events-none scale-110"></div>
-        <div class="relative z-10 rounded-2xl overflow-hidden bg-white">
-          <img src="GIF-DM.gif" alt="Método DM - Personalização" class="w-full h-auto object-cover scale-[1.03]" />
+  <!-- ==================== FEEDBACKS & RESULTADOS ==================== -->
+  <section id="resultados" class="py-16 sm:py-24 lg:py-32 bg-white reveal overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+        <div
+          class="inline-flex items-center gap-2 bg-primary/[0.08] text-primary px-4 py-2 rounded-full text-sm font-bold mb-6 border border-primary/20 uppercase tracking-widest transition-all hover:bg-primary/10">
+          Resultados & Satisfação
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ==================== FEEDBACKS & RESULTADOS ==================== -->
-<section id="resultados" class="py-16 sm:py-24 lg:py-32 bg-white reveal overflow-hidden">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6">
-    <div class="text-center mb-12 sm:mb-16 lg:mb-20">
-      <div class="inline-flex items-center gap-2 bg-primary/[0.08] text-primary px-4 py-2 rounded-full text-sm font-bold mb-6 border border-primary/20 uppercase tracking-widest transition-all hover:bg-primary/10">
-        Resultados & Satisfação
-      </div>
-      <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1]">
-        A prova real do nosso <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">compromisso</span>
-      </h2>
-      <p class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
-        Não vendemos promessas, entregamos <span class="text-foreground font-bold italic">escala.</span> Veja o que acontece quando estratégia encontra execução de excelência.
-      </p>
-    </div>
-
-    <!-- Masonry-style Feedback Grid -->
-    <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-      <!-- Item 1 -->
-      <div class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <img src="https://i.postimg.cc/br8QpdcH/Screenshot-72-(1).png" alt="Feedback de Cliente Dutra Mídias" class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" loading="lazy" />
-      </div>
-
-      <!-- Item 2 -->
-      <div class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <img src="https://i.postimg.cc/6qwdtTJZ/Screenshot-73-(1).png" alt="Resultado de Vendas Dutra Mídias" class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" loading="lazy" />
-      </div>
-
-      <!-- Item 3 -->
-      <div class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <img src="https://i.postimg.cc/1XPps4hw/Screenshot-74-(1).png" alt="Depoimento WhatsApp Dutra Mídias" class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" loading="lazy" />
-      </div>
-
-      <!-- Item 4 -->
-      <div class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <img src="https://i.postimg.cc/W30MBgK8/Screenshot-76-(1).png" alt="Crescimento de Empresa Dutra Mídias" class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" loading="lazy" />
-      </div>
-
-      <!-- Item 5 -->
-      <div class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <img src="https://i.postimg.cc/FR0jM3qG/Whats-App-Image-2024-06-27-at-15-21-15.jpg" alt="Feedback Real WhatsApp" class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" loading="lazy" />
-      </div>
-
-      <!-- Item 6 -->
-      <div class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <img src="https://i.postimg.cc/4dpzDVMQ/Whats-App-Image-2024-06-27-at-15-22-51.jpg" alt="Conversão de Leads Dutra Mídias" class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" loading="lazy" />
-      </div>
-
-      <!-- Item 7 -->
-      <div class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <img src="https://i.postimg.cc/vB5WJfjL/Whats-App-Image-2024-07-11-at-09-40-46.jpg" alt="Relatório de Vendas Dutra Mídias" class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" loading="lazy" />
-      </div>
-    </div>
-    
-    <div class="mt-16 text-center">
-      <a href="#diagnostico" class="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-5 rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-xl shadow-primary/20 hover:shadow-primary/30 hover:scale-[1.02] group">
-        Quero esses resultados na minha empresa
-        <i data-lucide="zap" class="w-5 h-5 fill-current group-hover:animate-pulse"></i>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ==================== DEPOIMENTOS ==================== -->
-<section id="depoimentos" class="py-20 sm:py-28 lg:py-36 bg-[#fcfcfd] relative overflow-hidden reveal">
-  <!-- Subtle Background Decor -->
-  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
-  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/[0.03] rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4"></div>
-
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-      <div class="max-w-2xl">
-        <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6 border border-primary/20 uppercase tracking-widest">
-          Voz de quem confia
-        </div>
-        <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1]">
-          Veja o que nossos <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">clientes dizem</span>
+        <h2
+          class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1]">
+          A prova real do nosso <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">compromisso</span>
         </h2>
-        <p class="text-lg text-muted-foreground font-medium">
-          Resultados comprovados através da voz de quem vive a transformação diária com a DM.
+        <p class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
+          Não vendemos promessas, entregamos <span class="text-foreground font-bold italic">escala.</span> Veja o que
+          acontece quando estratégia encontra execução de excelência.
         </p>
       </div>
 
-      <!-- Navigation Arrows -->
-      <div class="hidden md:flex gap-3">
-        <button id="testimonials-prev" class="testimonial-nav-btn" type="button" aria-label="Anterior">
-          <i data-lucide="arrow-left" class="w-6 h-6"></i>
-        </button>
-        <button id="testimonials-next" class="testimonial-nav-btn" type="button" aria-label="Próximo">
-          <i data-lucide="arrow-right" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="relative">
-      <!-- Gradient Mask for Scroll -->
-      <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#fcfcfd] to-transparent z-20 pointer-events-none hidden lg:block"></div>
-      <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#fcfcfd] to-transparent z-20 pointer-events-none hidden lg:block"></div>
-
-      <div id="testimonials-strip" class="testimonials-strip -mx-4 px-4 pb-12 overflow-x-auto scrollbar-hide flex gap-6 lg:gap-8 cursor-grab active:cursor-grabbing">
-        
-        <!-- Video Card 1 -->
-        <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
-          <div class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-            <iframe src="https://player.vimeo.com/video/1177364104?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 1"></iframe>
+      <!-- Masonry-style Feedback Grid -->
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        <!-- Item 1 -->
+        <div
+          class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           </div>
-          <div class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
-            Case Arlen
-          </div>
+          <img src="https://i.postimg.cc/br8QpdcH/Screenshot-72-(1).png" alt="Feedback de Cliente Dutra Mídias"
+            class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy" />
         </div>
 
-        <!-- Video Card 2 -->
-        <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
-          <div class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-            <iframe src="https://player.vimeo.com/video/1177364152?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 2"></iframe>
+        <!-- Item 2 -->
+        <div
+          class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           </div>
-          <div class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
-            Case Pro Max
-          </div>
+          <img src="https://i.postimg.cc/6qwdtTJZ/Screenshot-73-(1).png" alt="Resultado de Vendas Dutra Mídias"
+            class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy" />
         </div>
 
-        <!-- Video Card 3 -->
-        <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
-          <div class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-            <iframe src="https://player.vimeo.com/video/1177364230?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 3"></iframe>
+        <!-- Item 3 -->
+        <div
+          class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           </div>
-          <div class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
-            Cliente DM
-          </div>
+          <img src="https://i.postimg.cc/1XPps4hw/Screenshot-74-(1).png" alt="Depoimento WhatsApp Dutra Mídias"
+            class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy" />
         </div>
 
-        <!-- Video Card 4 -->
-        <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
-          <div class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-            <iframe src="https://player.vimeo.com/video/1177364267?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 4"></iframe>
+        <!-- Item 4 -->
+        <div
+          class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           </div>
-          <div class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
-            Cliente DM
-          </div>
+          <img src="https://i.postimg.cc/W30MBgK8/Screenshot-76-(1).png" alt="Crescimento de Empresa Dutra Mídias"
+            class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy" />
         </div>
 
-        <!-- Video Card 5 -->
-        <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
-          <div class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-            <iframe src="https://player.vimeo.com/video/1177364312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 5"></iframe>
+        <!-- Item 5 -->
+        <div
+          class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           </div>
-          <div class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
-            Cliente DM
-          </div>
+          <img src="https://i.postimg.cc/FR0jM3qG/Whats-App-Image-2024-06-27-at-15-21-15.jpg"
+            alt="Feedback Real WhatsApp"
+            class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy" />
         </div>
 
-      </div>
-
-      <!-- Mobile Dots -->
-      <div id="testimonials-dots" class="flex items-center justify-center gap-2 mt-4" aria-label="Navegação em pontos">
-        <button class="testimonial-dot active" data-index="0" type="button" aria-label="Ir para vídeo 1"></button>
-        <button class="testimonial-dot" data-index="1" type="button" aria-label="Ir para vídeo 2"></button>
-        <button class="testimonial-dot" data-index="2" type="button" aria-label="Ir para vídeo 3"></button>
-        <button class="testimonial-dot" data-index="3" type="button" aria-label="Ir para vídeo 4"></button>
-        <button class="testimonial-dot" data-index="4" type="button" aria-label="Ir para vídeo 5"></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ==================== PROCESSO DE CONTRATAÇÃO ==================== -->
-<section class="py-16 sm:py-20 lg:py-28 bg-white reveal">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6">
-    <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">Como contratar</div>
-      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-        Processo de <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">contratação simples</span>
-      </h2>
-      <p class="text-muted-foreground max-w-xl mx-auto">Em 4 passos você começa a gerar novos clientes para seu negócio.</p>
-    </div>
-    <div class="max-w-4xl mx-auto mt-16">
-      <div class="relative grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6">
-        <!-- Connecting Line Desktop -->
-        <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-1 bg-border/40 overflow-hidden">
-           <div class="absolute inset-0 bg-primary/30 w-full animate-shooting"></div>
-        </div>
-
-        <!-- Connecting Line Mobile -->
-        <div class="md:hidden absolute left-[47px] top-12 bottom-12 w-1 bg-border/40 overflow-hidden">
-           <div class="absolute inset-x-0 top-0 bg-primary/40 w-full animate-progress-v origin-top"></div>
-        </div>
-
-        <!-- Step 1 -->
-        <div class="relative text-center md:text-center flex flex-col items-center reveal" style="transition-delay: 100ms">
-          <div class="relative z-10 w-24 h-24 mb-6 bg-white border-4 border-primary/20 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-500 shadow-lg">
-            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
-              <i data-lucide="calendar-check" class="w-8 h-8 text-white"></i>
-            </div>
+        <!-- Item 6 -->
+        <div
+          class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           </div>
-          <div class="absolute top-0 right-1/2 translate-x-12 md:translate-x-10 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading shadow-md">1</div>
-          <h4 class="font-heading text-xl font-bold text-foreground mb-3">Solicita diagnóstico</h4>
-          <p class="text-muted-foreground text-sm max-w-[200px]">Preencha o formulário com informações fundamentais do seu negócio.</p>
+          <img src="https://i.postimg.cc/4dpzDVMQ/Whats-App-Image-2024-06-27-at-15-22-51.jpg"
+            alt="Conversão de Leads Dutra Mídias"
+            class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy" />
         </div>
 
-        <!-- Step 2 -->
-        <div class="relative text-center md:text-center flex flex-col items-center reveal" style="transition-delay: 300ms">
-          <div class="relative z-10 w-24 h-24 mb-6 bg-white border-4 border-primary/20 rounded-full flex items-center justify-center transition-all duration-500 shadow-lg">
-            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-inner">
-              <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
-            </div>
+        <!-- Item 7 -->
+        <div
+          class="break-inside-avoid group relative rounded-2xl overflow-hidden border border-border/60 bg-white shadow-sm hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           </div>
-          <div class="absolute top-0 right-1/2 translate-x-12 md:translate-x-10 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading shadow-md">2</div>
-          <h4 class="font-heading text-xl font-bold text-foreground mb-3">Análise estratégica</h4>
-          <p class="text-muted-foreground text-sm max-w-[200px]">Um especialista analisará seu projeto e iniciará o contato via WhatsApp.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="relative text-center md:text-center flex flex-col items-center reveal" style="transition-delay: 500ms">
-          <div class="relative z-10 w-24 h-24 mb-6 bg-white border-4 border-primary/20 rounded-full flex items-center justify-center transition-all duration-500 shadow-lg">
-            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-inner">
-              <i data-lucide="video" class="w-8 h-8 text-white"></i>
-            </div>
-          </div>
-          <div class="absolute top-0 right-1/2 translate-x-12 md:translate-x-10 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading shadow-md">3</div>
-          <h4 class="font-heading text-xl font-bold text-foreground mb-3">Reunião online</h4>
-          <p class="text-muted-foreground text-sm max-w-[200px]">Apresentamos detalhadamente o plano de escala personalizado para você.</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="relative text-center md:text-center flex flex-col items-center reveal" style="transition-delay: 700ms">
-          <div class="relative z-10 w-24 h-24 mb-6 bg-white border-4 border-primary/20 rounded-full flex items-center justify-center transition-all duration-500 shadow-lg">
-            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-inner">
-              <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
-            </div>
-          </div>
-          <div class="absolute top-0 right-1/2 translate-x-12 md:translate-x-10 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading shadow-md">4</div>
-          <h4 class="font-heading text-xl font-bold text-foreground mb-3">Início da operação</h4>
-          <p class="text-muted-foreground text-sm max-w-[200px]">Execução rápida das campanhas focada em ROI e novos clientes.</p>
+          <img src="https://i.postimg.cc/vB5WJfjL/Whats-App-Image-2024-07-11-at-09-40-46.jpg"
+            alt="Relatório de Vendas Dutra Mídias"
+            class="w-full h-auto object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy" />
         </div>
       </div>
+
+      <div class="mt-16 text-center">
+        <a href="#diagnostico"
+          class="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-5 rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-xl shadow-primary/20 hover:shadow-primary/30 hover:scale-[1.02] group">
+          Quero esses resultados na minha empresa
+          <i data-lucide="zap" class="w-5 h-5 fill-current group-hover:animate-pulse"></i>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ==================== CTA FINAL ==================== -->
-<section class="py-12 sm:py-20 bg-[#0a0a0a] relative overflow-hidden reveal">
-  <!-- Glowing Background Orbs -->
-  <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
-  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4"></div>
 
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-    <div class="max-w-4xl mx-auto">
-      <div class="relative group p-8 sm:p-10 lg:p-16 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl overflow-hidden shadow-2xl">
-        <!-- Shine effect on hover -->
-        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-        
-        <div class="relative z-20 text-center">
-          <div class="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold mb-6 border border-primary/30 uppercase tracking-[0.2em]">
-            Pronto para escalar?
+  <!-- ==================== DEPOIMENTOS ==================== -->
+  <section id="depoimentos" class="py-20 sm:py-28 lg:py-36 bg-[#fcfcfd] relative overflow-hidden reveal">
+    <!-- Subtle Background Decor -->
+    <div
+      class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/4">
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/[0.03] rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div class="max-w-2xl">
+          <div
+            class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6 border border-primary/20 uppercase tracking-widest">
+            Voz de quem confia
           </div>
-          
-          <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight leading-[1.2]">
-            Precisa gerar <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">novos clientes</span> com frequência?
+          <h2
+            class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1]">
+            Veja o que nossos <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">clientes dizem</span>
           </h2>
-          
-          <p class="text-base sm:text-lg md:text-xl text-white/70 mb-8 max-w-xl mx-auto leading-relaxed font-medium">
-            Agende um diagnóstico gratuito e descubra como o nosso método validado pode <span class="text-white font-bold">mudar o jogo</span> do seu negócio.
+          <p class="text-lg text-muted-foreground font-medium">
+            Resultados comprovados através da voz de quem vive a transformação diária com a DM.
           </p>
-          
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#diagnostico" class="group/btn relative inline-flex items-center gap-3 bg-primary text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-xl transition-all duration-300 shadow-[0_0_30px_-5px_#7C3AED] hover:shadow-[0_0_50px_-5px_#7C3AED] hover:scale-[1.03] active:scale-[0.98]">
-              Agendar diagnóstico agora
-              <i data-lucide="arrow-right" class="w-5 h-5 group-hover/btn:translate-x-2 transition-transform duration-300"></i>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="hidden md:flex gap-3">
+          <button id="testimonials-prev" class="testimonial-nav-btn" type="button" aria-label="Anterior">
+            <i data-lucide="arrow-left" class="w-6 h-6"></i>
+          </button>
+          <button id="testimonials-next" class="testimonial-nav-btn" type="button" aria-label="Próximo">
+            <i data-lucide="arrow-right" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="relative">
+        <!-- Gradient Mask for Scroll -->
+        <div
+          class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#fcfcfd] to-transparent z-20 pointer-events-none hidden lg:block">
+        </div>
+        <div
+          class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#fcfcfd] to-transparent z-20 pointer-events-none hidden lg:block">
+        </div>
+
+        <div id="testimonials-strip"
+          class="testimonials-strip -mx-4 px-4 pb-12 overflow-x-auto scrollbar-hide flex gap-6 lg:gap-8 cursor-grab active:cursor-grabbing">
+
+          <!-- Video Card 1 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe
+                src="https://player.vimeo.com/video/1177364104?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 1"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Case Arlen
+            </div>
+          </div>
+
+          <!-- Video Card 2 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe
+                src="https://player.vimeo.com/video/1177364152?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 2"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Case Pro Max
+            </div>
+          </div>
+
+          <!-- Video Card 3 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe
+                src="https://player.vimeo.com/video/1177364230?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 3"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Cliente DM
+            </div>
+          </div>
+
+          <!-- Video Card 4 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe
+                src="https://player.vimeo.com/video/1177364267?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 4"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Cliente DM
+            </div>
+          </div>
+
+          <!-- Video Card 5 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe
+                src="https://player.vimeo.com/video/1177364312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Depoimento 5"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Cliente DM
+            </div>
+          </div>
+
+          <!-- Video Card 6 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe src="https://player.vimeo.com/video/1029753613?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Case BigRock"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              BigRock
+            </div>
+          </div>
+
+          <!-- Video Card 7 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe src="https://player.vimeo.com/video/1029750331?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Case IceBreew"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              IceBreew
+            </div>
+          </div>
+
+          <!-- Video Card 8 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe src="https://player.vimeo.com/video/1029748827?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Case Leão"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Leão
+            </div>
+          </div>
+
+          <!-- Video Card 9 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe src="https://player.vimeo.com/video/1029754266?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Case Luxus"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Luxus
+            </div>
+          </div>
+
+          <!-- Video Card 10 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe src="https://player.vimeo.com/video/1029750858?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Case Moreira"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Moreira
+            </div>
+          </div>
+
+          <!-- Video Card 11 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe src="https://player.vimeo.com/video/1029691711?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Case Viva Bem Fit"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Viva Bem Fit
+            </div>
+          </div>
+
+          <!-- Video Card 12 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe src="https://player.vimeo.com/video/1029745697?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Case Zuna"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              Zuna
+            </div>
+          </div>
+
+          <!-- Video Card 13 -->
+          <div class="testimonial-video-card group flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] relative">
+            <div
+              class="relative aspect-[9/16] bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden border-[8px] border-[#1a1a1a] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <iframe src="https://player.vimeo.com/video/1029752760?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" title="Case De Buena"></iframe>
+            </div>
+            <div
+              class="absolute -top-3 -right-3 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg z-30 uppercase tracking-widest border border-white/20">
+              De Buena
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mobile Dots -->
+        <div id="testimonials-dots" class="flex items-center justify-center gap-2 mt-4"
+          aria-label="Navegação em pontos">
+          <button class="testimonial-dot active" data-index="0" type="button" aria-label="Ir para vídeo 1"></button>
+          <button class="testimonial-dot" data-index="1" type="button" aria-label="Ir para vídeo 2"></button>
+          <button class="testimonial-dot" data-index="2" type="button" aria-label="Ir para vídeo 3"></button>
+          <button class="testimonial-dot" data-index="3" type="button" aria-label="Ir para vídeo 4"></button>
+          <button class="testimonial-dot" data-index="4" type="button" aria-label="Ir para vídeo 5"></button>
+          <button class="testimonial-dot" data-index="5" type="button" aria-label="Ir para vídeo 6"></button>
+          <button class="testimonial-dot" data-index="6" type="button" aria-label="Ir para vídeo 7"></button>
+          <button class="testimonial-dot" data-index="7" type="button" aria-label="Ir para vídeo 8"></button>
+          <button class="testimonial-dot" data-index="8" type="button" aria-label="Ir para vídeo 9"></button>
+          <button class="testimonial-dot" data-index="9" type="button" aria-label="Ir para vídeo 10"></button>
+          <button class="testimonial-dot" data-index="10" type="button" aria-label="Ir para vídeo 11"></button>
+          <button class="testimonial-dot" data-index="11" type="button" aria-label="Ir para vídeo 12"></button>
+          <button class="testimonial-dot" data-index="12" type="button" aria-label="Ir para vídeo 13"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ==================== PROCESSO DE CONTRATAÇÃO ==================== -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="text-center mb-16">
+        <div
+          class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          Como contratar</div>
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          Processo de <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 pb-1">contratação
+            simples</span>
+        </h2>
+        <p class="text-muted-foreground max-w-xl mx-auto">Em 4 passos você começa a gerar novos clientes para seu
+          negócio.</p>
+      </div>
+      <div class="max-w-4xl mx-auto mt-16">
+        <div class="relative grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6">
+          <!-- Connecting Line Desktop -->
+          <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-1 bg-border/40 overflow-hidden">
+            <div class="absolute inset-0 bg-primary/30 w-full animate-shooting"></div>
+          </div>
+
+          <!-- Connecting Line Mobile -->
+          <div class="md:hidden absolute left-[47px] top-12 bottom-12 w-1 bg-border/40 overflow-hidden">
+            <div class="absolute inset-x-0 top-0 bg-primary/40 w-full animate-progress-v origin-top"></div>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="relative text-center md:text-center flex flex-col items-center reveal"
+            style="transition-delay: 100ms">
+            <div
+              class="relative z-10 w-24 h-24 mb-6 bg-white border-4 border-primary/20 rounded-full flex items-center justify-center group-hover:border-primary transition-all duration-500 shadow-lg">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
+                <i data-lucide="calendar-check" class="w-8 h-8 text-white"></i>
+              </div>
+            </div>
+            <div
+              class="absolute top-0 right-1/2 translate-x-12 md:translate-x-10 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading shadow-md">
+              1</div>
+            <h4 class="font-heading text-xl font-bold text-foreground mb-3">Solicita diagnóstico</h4>
+            <p class="text-muted-foreground text-sm max-w-[200px]">Preencha o formulário com informações fundamentais do
+              seu negócio.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative text-center md:text-center flex flex-col items-center reveal"
+            style="transition-delay: 300ms">
+            <div
+              class="relative z-10 w-24 h-24 mb-6 bg-white border-4 border-primary/20 rounded-full flex items-center justify-center transition-all duration-500 shadow-lg">
+              <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-inner">
+                <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+              </div>
+            </div>
+            <div
+              class="absolute top-0 right-1/2 translate-x-12 md:translate-x-10 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading shadow-md">
+              2</div>
+            <h4 class="font-heading text-xl font-bold text-foreground mb-3">Análise estratégica</h4>
+            <p class="text-muted-foreground text-sm max-w-[200px]">Um especialista analisará seu projeto e iniciará o
+              contato via WhatsApp.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative text-center md:text-center flex flex-col items-center reveal"
+            style="transition-delay: 500ms">
+            <div
+              class="relative z-10 w-24 h-24 mb-6 bg-white border-4 border-primary/20 rounded-full flex items-center justify-center transition-all duration-500 shadow-lg">
+              <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-inner">
+                <i data-lucide="video" class="w-8 h-8 text-white"></i>
+              </div>
+            </div>
+            <div
+              class="absolute top-0 right-1/2 translate-x-12 md:translate-x-10 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading shadow-md">
+              3</div>
+            <h4 class="font-heading text-xl font-bold text-foreground mb-3">Reunião online</h4>
+            <p class="text-muted-foreground text-sm max-w-[200px]">Apresentamos detalhadamente o plano de escala
+              personalizado para você.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative text-center md:text-center flex flex-col items-center reveal"
+            style="transition-delay: 700ms">
+            <div
+              class="relative z-10 w-24 h-24 mb-6 bg-white border-4 border-primary/20 rounded-full flex items-center justify-center transition-all duration-500 shadow-lg">
+              <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-inner">
+                <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
+              </div>
+            </div>
+            <div
+              class="absolute top-0 right-1/2 translate-x-12 md:translate-x-10 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20 font-heading shadow-md">
+              4</div>
+            <h4 class="font-heading text-xl font-bold text-foreground mb-3">Início da operação</h4>
+            <p class="text-muted-foreground text-sm max-w-[200px]">Execução rápida das campanhas focada em ROI e novos
+              clientes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== CTA FINAL ==================== -->
+  <section class="py-12 sm:py-20 bg-[#0a0a0a] relative overflow-hidden reveal">
+    <!-- Glowing Background Orbs -->
+    <div
+      class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/4">
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="relative group p-8 sm:p-10 lg:p-16 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl overflow-hidden shadow-2xl">
+          <!-- Shine effect on hover -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out">
+          </div>
+
+          <div class="relative z-20 text-center">
+            <div
+              class="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold mb-6 border border-primary/30 uppercase tracking-[0.2em]">
+              Pronto para escalar?
+            </div>
+
+            <h2
+              class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight leading-[1.2]">
+              Precisa gerar <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">novos clientes</span>
+              com frequência?
+            </h2>
+
+            <p class="text-base sm:text-lg md:text-xl text-white/70 mb-8 max-w-xl mx-auto leading-relaxed font-medium">
+              Agende um diagnóstico gratuito e descubra como o nosso método validado pode <span
+                class="text-white font-bold">mudar o jogo</span> do seu negócio.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="#diagnostico"
+                class="group/btn relative inline-flex items-center gap-3 bg-primary text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-xl transition-all duration-300 shadow-[0_0_30px_-5px_#7C3AED] hover:shadow-[0_0_50px_-5px_#7C3AED] hover:scale-[1.03] active:scale-[0.98]">
+                Agendar diagnóstico agora
+                <i data-lucide="arrow-right"
+                  class="w-5 h-5 group-hover/btn:translate-x-2 transition-transform duration-300"></i>
+              </a>
+            </div>
+
+            <div
+              class="mt-8 flex flex-wrap items-center justify-center gap-4 text-white/35 text-[10px] sm:text-xs font-semibold">
+              <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2"
+                  class="w-3.5 h-3.5 text-green-500/80"></i> Sem compromisso</div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2"
+                  class="w-3.5 h-3.5 text-green-500/80"></i> Estratégia real</div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2"
+                  class="w-3.5 h-3.5 text-green-500/80"></i> Gratuito</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-foreground text-white py-12 reveal">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <img src="https://i.postimg.cc/3wFt7Yrx/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png"
+              alt="Dutra Mídias Logo" class="h-10 w-auto object-contain" />
+            <span class="font-heading font-semibold text-xl text-white">Dutra Mídias</span>
+          </div>
+          <p class="text-white/70 max-w-md leading-relaxed">Estruturamos e operamos campanhas de tráfego pago com
+            acompanhamento estratégico contínuo para gerar novos clientes toda semana.</p>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold mb-4 text-white">Links Rápidos</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="#" class="text-white/70 hover:text-primary transition-colors">Home</a>
+            <a href="#metodo" class="text-white/70 hover:text-primary transition-colors">Como funciona</a>
+            <a href="#resultados" class="text-white/70 hover:text-primary transition-colors">Resultados</a>
+            <a href="#depoimentos" class="text-white/70 hover:text-primary transition-colors">Depoimentos</a>
+            <a href="#sobre" class="text-white/70 hover:text-primary transition-colors">Sobre</a>
+            <a href="#diagnostico" class="text-white/70 hover:text-primary transition-colors">Diagnóstico</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold mb-4 text-white">Contato</h4>
+          <div class="flex flex-col gap-2 text-white/70">
+            <p>Dutramidias@gmail.com</p>
+            <p>Belo Horizonte</p>
+            <p>CNPJ: 42.743.137/0001-86</p>
+          </div>
+          <div class="flex gap-4 mt-4">
+            <a href="https://www.instagram.com/dutramidias/" target="_blank" rel="noopener noreferrer"
+              class="text-white/70 hover:text-primary transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
             </a>
           </div>
-          
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-white/35 text-[10px] sm:text-xs font-semibold">
-            <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-green-500/80"></i> Sem compromisso</div>
-            <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-green-500/80"></i> Estratégia real</div>
-            <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-green-500/80"></i> Gratuito</div>
-          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/50 text-sm">© 2026 Dutra Mídias. Todos os direitos reservados.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="#" class="text-white/50 hover:text-primary transition-colors">Política de Privacidade</a>
+          <a href="#" class="text-white/50 hover:text-primary transition-colors">Termos de Uso</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
 
 
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
 
-<!-- ==================== FOOTER ==================== -->
-<footer class="bg-foreground text-white py-12 reveal">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-2 mb-4">
-          <img src="https://i.postimg.cc/3wFt7Yrx/Chat-GPT-Image-3-de-mar-de-2026-19-49-12-(1).png" alt="Dutra Mídias Logo" class="h-10 w-auto object-contain" />
-          <span class="font-heading font-semibold text-xl text-white">Dutra Mídias</span>
-        </div>
-        <p class="text-white/70 max-w-md leading-relaxed">Estruturamos e operamos campanhas de tráfego pago com acompanhamento estratégico contínuo para gerar novos clientes toda semana.</p>
-      </div>
-      <div>
-        <h4 class="font-heading font-semibold mb-4 text-white">Links Rápidos</h4>
-        <nav class="flex flex-col gap-2">
-          <a href="#" class="text-white/70 hover:text-primary transition-colors">Home</a>
-          <a href="#metodo" class="text-white/70 hover:text-primary transition-colors">Como funciona</a>
-          <a href="#resultados" class="text-white/70 hover:text-primary transition-colors">Resultados</a>
-          <a href="#depoimentos" class="text-white/70 hover:text-primary transition-colors">Depoimentos</a>
-          <a href="#sobre" class="text-white/70 hover:text-primary transition-colors">Sobre</a>
-          <a href="#diagnostico" class="text-white/70 hover:text-primary transition-colors">Diagnóstico</a>
-        </nav>
-      </div>
-      <div>
-        <h4 class="font-heading font-semibold mb-4 text-white">Contato</h4>
-        <div class="flex flex-col gap-2 text-white/70">
-          <p>Dutramidias@gmail.com</p>
-          <p>Belo Horizonte</p>
-          <p>CNPJ: 42.743.137/0001-86</p>
-        </div>
-        <div class="flex gap-4 mt-4">
-          <a href="https://www.instagram.com/dutramidias/" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-primary transition-colors" aria-label="Instagram">
-            <i data-lucide="instagram" class="w-5 h-5"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-white/50 text-sm">© 2026 Dutra Mídias. Todos os direitos reservados.</p>
-      <div class="flex gap-6 text-sm">
-        <a href="#" class="text-white/50 hover:text-primary transition-colors">Política de Privacidade</a>
-        <a href="#" class="text-white/50 hover:text-primary transition-colors">Termos de Uso</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-
-<!-- ==================== JAVASCRIPT ==================== -->
-<script>
-  // Initialize Lucide icons
-  lucide.createIcons();
-
-  // Loader
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const loader = document.getElementById('loader');
-      if (loader) loader.style.display = 'none';
-    }, 1300);
-  });
-
-  // Form submission -> WhatsApp
-  document.getElementById('diagnostico-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const fd = new FormData(this);
-    const msg = encodeURIComponent(
-      `Olá! Gostaria de agendar um diagnóstico estratégico.\n\nNome: ${fd.get('nome')}\nEmpresa: ${fd.get('empresa')}\nNicho: ${fd.get('nicho')}\nFaturamento: ${fd.get('faturamento')}\nTicket Médio: ${fd.get('ticketMedio')}\nEquipe Comercial: ${fd.get('equipeComercial')}\nObjetivo: ${fd.get('objetivo')}`
-    );
-    window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
-  });
-
-  // Animated number counter on scroll
-  const counters = document.querySelectorAll('.counter');
-  const observerOptions = { threshold: 0.5 };
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.target);
-        const prefix = el.dataset.prefix || '';
-        let current = 0;
-        const increment = target / 40;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          el.textContent = prefix + Math.floor(current);
-        }, 50);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, observerOptions);
-  counters.forEach(c => counterObserver.observe(c));
-
-  // Scroll reveal
-  const revealElements = document.querySelectorAll('.reveal');
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    revealElements.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) {
-        el.classList.add('active');
-      }
-    });
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
-
-  // Parallax on hero image
-  const heroImg = document.querySelector('.hero-img');
-  window.addEventListener('scroll', () => {
-    if (!heroImg) return;
-    const scroll = window.scrollY;
-    heroImg.style.transform = `translateY(${scroll * 0.12}px)`;
-  });
-
-  // Testimonials slider controls
-  const testimonialsStrip = document.getElementById('testimonials-strip');
-  const testimonialsPrev = document.getElementById('testimonials-prev');
-  const testimonialsNext = document.getElementById('testimonials-next');
-  const testimonialsDots = document.querySelectorAll('#testimonials-dots .testimonial-dot');
-  const testimonialsCards = testimonialsStrip ? Array.from(testimonialsStrip.querySelectorAll('.testimonial-video-card')) : [];
-
-  if (testimonialsStrip && testimonialsCards.length > 0) {
-    let activeIndex = 0;
-
-    const getStep = () => {
-      const firstCard = testimonialsCards[0];
-      if (!firstCard) return 280;
-      const cardWidth = firstCard.getBoundingClientRect().width;
-      return cardWidth + 16;
-    };
-
-    const goToIndex = (index) => {
-      const safeIndex = Math.max(0, Math.min(index, testimonialsCards.length - 1));
-      const card = testimonialsCards[safeIndex];
-      if (!card) return;
-      card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-      activeIndex = safeIndex;
-      updateDots();
-    };
-
-    const updateDots = () => {
-      testimonialsDots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === activeIndex);
-      });
-    };
-
-    const updateActiveFromScroll = () => {
-      const step = getStep();
-      const nextIndex = Math.round(testimonialsStrip.scrollLeft / step);
-      activeIndex = Math.max(0, Math.min(nextIndex, testimonialsCards.length - 1));
-      updateDots();
-    };
-
-    if (testimonialsPrev) {
-      testimonialsPrev.addEventListener('click', () => {
-        goToIndex(activeIndex - 1);
-      });
-    }
-
-    if (testimonialsNext) {
-      testimonialsNext.addEventListener('click', () => {
-        goToIndex(activeIndex + 1);
-      });
-    }
-
-    testimonialsDots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const idx = parseInt(dot.dataset.index || '0', 10);
-        goToIndex(idx);
-      });
+    // Loader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
+      }, 1300);
     });
 
-    testimonialsStrip.addEventListener('scroll', updateActiveFromScroll, { passive: true });
-    window.addEventListener('resize', updateActiveFromScroll);
-    updateDots();
-  }
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+    // Form submission -> WhatsApp
+    document.getElementById('diagnostico-form').addEventListener('submit', function (e) {
       e.preventDefault();
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      const fd = new FormData(this);
+      const msg = encodeURIComponent(
+        `Olá! Gostaria de agendar um diagnóstico estratégico.\n\nNome: ${fd.get('nome')}\nEmpresa: ${fd.get('empresa')}\nNicho: ${fd.get('nicho')}\nFaturamento: ${fd.get('faturamento')}\nTicket Médio: ${fd.get('ticketMedio')}\nEquipe Comercial: ${fd.get('equipeComercial')}\nObjetivo: ${fd.get('objetivo')}`
+      );
+      window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
     });
-  });
-</script>
+
+    // Animated number counter on scroll
+    const counters = document.querySelectorAll('.counter');
+    const observerOptions = { threshold: 0.5 };
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const prefix = el.dataset.prefix || '';
+          let current = 0;
+          const increment = target / 40;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            el.textContent = prefix + Math.floor(current);
+          }, 50);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, observerOptions);
+    counters.forEach(c => counterObserver.observe(c));
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Parallax on hero image
+    const heroImg = document.querySelector('.hero-img');
+    window.addEventListener('scroll', () => {
+      if (!heroImg) return;
+      const scroll = window.scrollY;
+      heroImg.style.transform = `translateY(${scroll * 0.12}px)`;
+    });
+
+    // Testimonials slider controls
+    const testimonialsStrip = document.getElementById('testimonials-strip');
+    const testimonialsPrev = document.getElementById('testimonials-prev');
+    const testimonialsNext = document.getElementById('testimonials-next');
+    const testimonialsDots = document.querySelectorAll('#testimonials-dots .testimonial-dot');
+    const testimonialsCards = testimonialsStrip ? Array.from(testimonialsStrip.querySelectorAll('.testimonial-video-card')) : [];
+
+    if (testimonialsStrip && testimonialsCards.length > 0) {
+      let activeIndex = 0;
+
+      const getStep = () => {
+        const firstCard = testimonialsCards[0];
+        if (!firstCard) return 280;
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        return cardWidth + 16;
+      };
+
+      const goToIndex = (index) => {
+        const safeIndex = Math.max(0, Math.min(index, testimonialsCards.length - 1));
+        const card = testimonialsCards[safeIndex];
+        if (!card) return;
+        card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        activeIndex = safeIndex;
+        updateDots();
+      };
+
+      const updateDots = () => {
+        testimonialsDots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === activeIndex);
+        });
+      };
+
+      const updateActiveFromScroll = () => {
+        const step = getStep();
+        const nextIndex = Math.round(testimonialsStrip.scrollLeft / step);
+        activeIndex = Math.max(0, Math.min(nextIndex, testimonialsCards.length - 1));
+        updateDots();
+      };
+
+      if (testimonialsPrev) {
+        testimonialsPrev.addEventListener('click', () => {
+          goToIndex(activeIndex - 1);
+        });
+      }
+
+      if (testimonialsNext) {
+        testimonialsNext.addEventListener('click', () => {
+          goToIndex(activeIndex + 1);
+        });
+      }
+
+      testimonialsDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const idx = parseInt(dot.dataset.index || '0', 10);
+          goToIndex(idx);
+        });
+      });
+
+      testimonialsStrip.addEventListener('scroll', updateActiveFromScroll, { passive: true });
+      window.addEventListener('resize', updateActiveFromScroll);
+      updateDots();
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 
 </body>
+
 </html>
